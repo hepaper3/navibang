@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Room
+from .forms import RoomForm
 
 # Create your views here.
 def home(request):
@@ -16,8 +17,16 @@ def show(request):
     return render(request, 'show.html', {'rooms' : rooms})
 
 def register(request):
-    #방 등록 페이지
-    return render(request, 'register.html')
+    #방 등록 페이지 
+    if request.method == 'POST':
+        form = RoomForm(request.POST)
+        if form.is_valid():
+            roompost = form.save(commit=False)
+            roompost.save()
+            return redirect('list')
+    else:
+        form = RoomForm()
+        return render(request, 'register.html', {'form':form})
 
 def edit(request):
     # 수정 페이지

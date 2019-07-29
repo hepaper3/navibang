@@ -1,1 +1,10 @@
 <h1>register.html</h1>
+
+<form method='POST'>
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <br>
+    <input type="submit" value="등록">
+</form>
