@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Room
 
 # Create your views here.
 def home(request):
@@ -11,7 +12,8 @@ def list(request):
 
 def show(request):
     #방 세부 페이지
-    return render(request, 'show.html')
+    rooms = Room.objects
+    return render(request, 'show.html', {'rooms' : rooms})
 
 def register(request):
     #방 등록 페이지

@@ -1,1 +1,6 @@
 <h1>show.html</h1>
+{%for room in rooms.all %}
+    <h1> {{room.intro}} </h1>
+    <!--{%load staticfiles%}
+        <img src = "{%static 'image file'%}"> -->
+{% endfor %}
