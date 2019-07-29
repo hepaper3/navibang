@@ -40,8 +40,8 @@ class Room(models.Model):
     pub_date = models.DateField(null=True, auto_now=False, auto_now_add=False)                                         #등록 일자
     confirmation = models.FileField(null=True)                                                              #확인서 파일 첨부
     rent_term = models.CharField(choices=RENT_TERM_CHOICES, max_length=128)                                 #거래 유형(장/단기), #라디오버튼
-    start_date = models.DateField(null=True, auto_now=False, auto_now_add=False)                                  #임대 시작 날짜
-    end_date = models.DateField(null=True, auto_now=False, auto_now_add=False)                                    #임대 종료 날짜
+    start_date = models.DateField(null=True)                                  #임대 시작 날짜
+    end_date = models.DateField(null=True)                                    #임대 종료 날짜
     price = models.CharField(max_length=200)                                                                #임대 가격
     floor = models.CharField(max_length=200)                                                                #층
     room_type = models.CharField(choices=ROOM_TYPE_CHOICES, max_length=128)                                 #방 구조, #라디오버튼
