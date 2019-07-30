@@ -1,9 +1,9 @@
 <h1>register.html</h1>
 
-<form method='POST'>
+<form method='POST' enctype="multipart/form-data">
     {% csrf_token %}
     <table>
-        {{form.as_table}}
+        {{form.as_p}}
     </table>
     <br>
     <input type="submit" value="등록">

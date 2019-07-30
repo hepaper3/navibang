@@ -4,7 +4,11 @@ from .models import Room
 class RoomForm(forms.ModelForm):
     class Meta: 
         model = Room
-        fields = ['intro','pub_date','confirmation','rent_term','start_date','end_date','price','floor','room_type','area','host_stuff','parking','pet','elevator','option','detail','main_img','other_img','room_img']
+        fields = ('intro','pub_date','confirmation','rent_term','start_date','end_date','price','floor','room_type','area','host_stuff','parking','pet','elevator','option','detail','main_img','other_img','room_img')
+
+        def __init__(self, *args, **kwargs):
+          super(RoomForm, self).__init__(*args, **kwargs)
+          self.fields['file'].required = False
 
         widgets = {
             'intro': forms.TextInput( 
@@ -18,12 +22,7 @@ class RoomForm(forms.ModelForm):
                         'class': 'form-control', 
                         'type':  'date', 
                       } 
-            ),
-             'confirmation': forms.FileInput( 
-                attrs={ 
-                        'class': 'form-control', 
-                      } 
-            ),
+            ), 
              'rent_term': forms.RadioSelect( 
                 attrs={ 
                         'class': 'form-control',
@@ -81,7 +80,7 @@ class RoomForm(forms.ModelForm):
                         'class': 'form-control', 
                       } 
             ),
-              'option': forms.CheckboxInput( 
+              'option': forms.RadioSelect( 
                 attrs={ 
                         'class': 'form-control', 
                       } 
@@ -90,21 +89,6 @@ class RoomForm(forms.ModelForm):
                 attrs={ 
                         'class': 'form-control', 
                         'rows': '5',
-                      } 
-            ),
-               'main_img': forms.FileInput( 
-                attrs={    
-                        'class': 'form-control', 
-                      } 
-            ),
-               'other_img': forms.FileInput( 
-                attrs={ 
-                        'class': 'form-control', 
-                      } 
-            ),
-               'room_img': forms.FileInput( 
-                attrs={ 
-                        'class': 'form-control', 
                       } 
             ),
         }

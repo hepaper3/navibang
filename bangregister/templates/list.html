@@ -1,2 +1,8 @@
 <h1>list.html</h1>
 <a href = "{%url 'register'%}">새 글 쓰기</a>
+
+{%for room in rooms.all%}
+    <h1>{{room.intro}}</h1>
+    <p>{{room.pub_date}}</p>
+    <a href="{% url 'show' room.id %}">...more</a>
+{%endfor%}
