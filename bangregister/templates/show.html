@@ -1,3 +1,5 @@
+{% extends 'base.html' %} 
+{% block content %}
 {%load staticfiles%}
 <h1>show.html</h1>
     소개글 : <h1>{{room_detail.intro}} </h1>
@@ -22,3 +24,5 @@
 
     <!--{%load staticfiles%}
         <img src = "{%static 'image file'%}"> -->
+
+{% endblock %}

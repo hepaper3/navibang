@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '_0y_iu$$ke&8g)r&rkt8g7ep!wr5r-75ofv4fs7*8my&vi2q+7'
-
+#SECRET_KEY = '_0y_iu$$ke&8g)r&rkt8g7ep!wr5r-75ofv4fs7*8my&vi2q+7'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '_0y_iu$$ke&8g)r&rkt8g7ep!wr5r-75ofv4fs7*8my&vi2q+7')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+#DEBUG = True
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'navibang.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['navibang/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
