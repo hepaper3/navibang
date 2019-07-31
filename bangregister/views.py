@@ -10,13 +10,25 @@ def home(request):
 
 def list(request):
     #등록한 방들이 보일 페이지
-    rooms = Room.objects
-    return render(request, 'list.html', {'rooms':rooms})
+    roomposts = Room.objects
+    return render(request, 'list.html', {'roomposts':roomposts})
 
-def show(request, room_id):
+def show(request, roompost_id):
     #방 세부 페이지
-    room_detail = get_object_or_404(Room, pk=room_id)
-    return render(request, 'show.html', {'room_detail' : room_detail})
+    roompost = get_object_or_404(Room, pk=roompost_id)
+    return render(request, 'show.html', {'roompost' : roompost})
+
+def roomupdate(request, roompost_id):
+    roompost = get_object_or_404(Room, pk = roompost_id) 
+    if request.method == 'POST':
+        form = RoomForm(request.POST, instance=roompost) 
+        if form.is_valid():
+            roompost = form.save(commit=False) 
+            roompost.save() 
+            return redirect('show', roompost_id=roompost.pk)
+    else: 
+        form = RoomForm(instance=roompost)
+        return render(request, 'edit.html', {'form': form})
 
 def register(request):
     #방 등록 페이지 
@@ -34,6 +46,8 @@ def edit(request):
     # 수정 페이지
     return render(request, 'edit.html')
 
-#def delete(request):
+def delete(request, roompost_id):
     #삭제기능
-#    return render(request, 'delete.html')
+    roompost = get_object_or_404(Room, pk=roompost_id)
+    roompost.delete()
+    return redirect('list')
