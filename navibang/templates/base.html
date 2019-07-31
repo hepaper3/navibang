@@ -8,17 +8,17 @@
 <body>
     <nav class="nav-extended">
         <div class="nav-wrapper">
-        <a href="#" class="brand-logo">나비방</a>
+        <a href="{%url 'home'%}" class="brand-logo">나비방</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
         </ul>
         </div>
         <div class="nav-content">
         <ul class="tabs tabs-transparent">
-            <li class="tab"><a href="#test1">방 보러가기</a></li>
-            <li class="tab"><a class="active" href="#test2">방 등록하기</a></li>
-            <li class="tab"><a href="#test3">마이페이지</a></li>
-            <li class="tab"><a href="#test4">로그인/회원가입</a></li>
+            <li class="tab"><a href="{%url 'list'%}">방 보러가기</a></li>
+            <li class="tab"><a class="active" href="{%url 'register'%}">방 등록하기</a></li>
+            <li class="tab"><a href="{%url 'signup'%}">회원가입</a></li>
+            <li class="tab"><a href="{%url 'login'%}">로그인</a></li>
         </ul>
         </div>
     </nav>
