@@ -1,0 +1,1 @@
+web: gunicorn navibang.wsgi --log-file -
