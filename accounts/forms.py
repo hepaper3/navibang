@@ -26,4 +26,24 @@ class UserForm(forms.ModelForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('bio', 'location', 'birth_date')
+        fields = ('age', 'birth_date', 'self_introduce')
+        widgets = {
+            'age' : forms.NumberInput(
+                attrs = {
+                    'class' : 'form-control',
+                }
+            ),
+
+            'birth_date' : forms.DateInput(
+                attrs = {
+                    'class' : 'form-control',
+                    'type' : 'date',
+                }
+            ),
+
+            'self_introduce' : forms.Textarea(
+                attrs = {
+                    'class' : 'form-control',
+                }
+            ),
+        }
