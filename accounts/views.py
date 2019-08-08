@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib import auth
 from .models import Profile
@@ -9,6 +9,12 @@ from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
+
+
+@login_required
+def show_profile(request) :
+    return render(request, 'show_profile.html')
+
 
 @login_required
 @transaction.atomic
@@ -62,6 +68,7 @@ def login(request) :
     else:
         return render(request, 'login.html')
 
+@login_required
 def logout(request) :
     if request.method == 'POST' :
         auth.logout(request)

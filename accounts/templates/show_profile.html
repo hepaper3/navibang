@@ -1,1 +1,18 @@
-<h1>show_profile.html</h1>
+{% extends 'base.html' %}
+{% block content %}
+
+    {% if user.is_authenticated %}
+        username : {{ user.username }} <br>
+        first name : {{ user.first_name }} <br>
+        last name : {{ user.last_name }} <br>
+
+        profile img : <img src="{{ user.profile.profile_img.url }}" width="200"> <br>    
+        age : {{ user.profile.age }} <br>
+        birth day : {{ user.profile.birth_date }} <br>
+        gender : {{ user.profile.gender }} <br>
+        slef introduce : {{ user.profile.self_introduce }} <br>
+
+
+    {% endif %}
+
+{% endblock %}
