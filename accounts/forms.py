@@ -11,7 +11,7 @@ class UserForm(forms.ModelForm):
             'first_name' : forms.TextInput(
                 attrs={
                     'class' : 'form-control',
-                    'placeholder' : '이름'
+                    'placeholder' : '이름' 
                 }
             ),
 
