@@ -5,7 +5,37 @@
 <form method='POST' enctype="multipart/form-data">
     {% csrf_token %}
     <table>
-        {{form.as_table}}
+    <div class = "container">
+    
+        <form action="#">
+        <p>
+        <label>
+            <input name="group1" type="radio" checked />
+            <span>{{form.option.0}}</span>
+        </label>
+        </p>
+        <p>
+        <label>
+            <input name="group1" type="radio" />
+            <span>Yellow</span>
+        </label>
+        </p>
+        <p>
+        <label>
+            <input class="with-gap" name="group1" type="radio"  />
+            <span>Green</span>
+        </label>
+        </p>
+        <p>
+        <label>
+            <input name="group1" type="radio" disabled="disabled" />
+            <span>Brown</span>
+        </label>
+        </p>
+    </form>
+            
+        
+    </div>
     </table>
     <br>
     <input type="submit" value="등록">

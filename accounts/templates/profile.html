@@ -1,0 +1,11 @@
+<form method='POST'>
+    {% csrf_token %}
+
+    <table>
+        {{ user_form.as_table }}
+        {{ profile_form.as_table }}
+    </table>
+
+    <br>
+    <input type="submit" value="등록">
+</form>
