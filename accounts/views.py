@@ -15,6 +15,8 @@ from django.contrib.auth.forms import UserCreationForm
 def show_profile(request) :
     return render(request, 'show_profile.html')
 
+def signup_complete(request) :
+    return render(request, 'signup_complete.html')
 
 @login_required
 @transaction.atomic
@@ -26,7 +28,7 @@ def update_profile(request):
             user_form.save()
             profile_form.save()
             messages.success(request, ('Your profile was successfully updated!'))
-            return redirect('home')
+            return redirect('signup_complete')
         else:
             messages.error(request, ('Please correct the error below.'))
     else:
