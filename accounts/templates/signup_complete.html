@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    회원가입이 완료되었습니다!
+    
+    <br>
+
+    <a href="{% url 'home' %}">홈으로 가기</a> <br> 
+    <a href="{% url 'show_profile' %}">회원정보 보기</a>
+
+{% endblock %}
