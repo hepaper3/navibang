@@ -17,7 +17,7 @@ class RoomForm(forms.ModelForm):
     sink = forms.CharField(widget=forms.RadioSelect(choices=(('있음','있음'),('없음','없음'))))
     class Meta:
         model = Room
-        fields = ('intro','pub_date','confirmation','rent_term','start_date','end_date','price','floor','room_type','area','host_stuff','parking','pet','elevator','aircon', 'fridge','washingmachine','desk','bed','sink', 'detail','main_img','other_img','room_img', 'address1', 'address2', 'address3', 'address4')
+        fields = ('intro','pub_date','confirmation','rent_term','start_date','end_date','price','floor','room_type','area','host_stuff','parking','pet','elevator','aircon','fridge','washingmachine','desk','bed','sink','detail','main_img','other_img','room_img','address1','address2','address3','address4')
 
         def __init__(self, *args, **kwargs):
           super(RoomForm, self).__init__(*args, **kwargs)
@@ -174,12 +174,12 @@ class RoomForm(forms.ModelForm):
                         'parking': '주차장',
                         'pet': '애완동물 동반',
                         'elevator': '엘리베이터',
-                        'aircon' : '에어컨',
-                        'fridge' : '냉장고',
-                        'washingmachine' : '세탁기',
-                        'desk' : '책상',
+                        'aircon': '에어컨',
+                        'fridge': '냉장고',
+                        'washingmachine': '세탁기',
+                        'desk': '책상',
                         'bed': '침대',
-                        'sink' : '싱크대',
+                        'sink': '싱크대',
                         'detail': '상세소개',
                         'main_img': '대표 사진',
                         'other_img': '화장실, 주방 사진',
@@ -189,4 +189,4 @@ class RoomForm(forms.ModelForm):
                         'address3' : '상세주소',
                         'address4' : '참고항목',
                         
-                    }
+                  }
