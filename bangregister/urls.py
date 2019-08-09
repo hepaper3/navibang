@@ -8,4 +8,7 @@ urlpatterns = [
     path('edit/', views.edit, name='edit'),
     path('roomupdate/<int:roompost_id>', views.roomupdate, name='roomupdate'),
     path('delete/<int:roompost_id>', views.delete, name='delete'),
+    path('scrap/<int:roompost_id>', views.scrap, name='scrap'),
+    path('like/<int:roompost_id>', views.like, name='like'),
+
 ]

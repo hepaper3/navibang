@@ -67,4 +67,4 @@ class ProfileForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(ProfileForm, self).__init__(*args, **kwargs)
-        self.fields['profile_img'].required = False
+        self.fields['profile_img'].required = True
