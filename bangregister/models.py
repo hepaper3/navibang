@@ -30,10 +30,7 @@ ELEVATOR_CHOICES=(
 OPTION_CHOICES=(
     ('에어컨', '에어컨'),
     ('냉장고', '냉장고'),
-    ('세탁기', '세탁기'),
-    ('책상', '책상'),
-    ('침대', '침대'),
-    ('침대', '싱크대')
+    ('["냉장고", "세탁기"]', '["냉장고", "세탁기"]')
 )
 # Create your models here.
 class Room(models.Model):

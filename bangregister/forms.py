@@ -1,5 +1,6 @@
 from django import forms
 from .models import Room
+from django.forms.widgets import CheckboxSelectMultiple
 
 class RoomForm(forms.ModelForm):
     
@@ -9,7 +10,7 @@ class RoomForm(forms.ModelForm):
     parking = forms.CharField(widget=forms.RadioSelect(choices=(('있음','있음'),('없음','없음'))))
     pet = forms.CharField(widget=forms.RadioSelect(choices=(('가능','가능'),('불가능','불가능'))))
     elevator = forms.CharField(widget=forms.RadioSelect(choices=(('있음','있음'),('없음','없음'))))
-    option = forms.CharField(widget=forms.RadioSelect(choices=(('에어컨','에어컨'),('냉장고','냉장고'),('세탁기','세탁기'),('책상','책상'),('침대','침대'),('침대','싱크대'))))
+    option = forms.CharField(widget=forms.CheckboxSelectMultiple(choices=(('에어컨','에어컨'),('냉장고','냉장고'))))
 
     class Meta:
         model = Room
@@ -18,6 +19,7 @@ class RoomForm(forms.ModelForm):
         def __init__(self, *args, **kwargs):
           super(RoomForm, self).__init__(*args, **kwargs)
           self.fields['file'].required = False
+          option = forms.ModelMultipleChoiceField(choices=Room.OPTION_CHOICES, widget=forms.CheckboxSelectMultiple, required=False)
 
         widgets = {
             'intro': forms.TextInput(
