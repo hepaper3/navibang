@@ -9,9 +9,16 @@ def home(request):
     return render(request, 'home.html')
 
 def list(request):
-    #등록한 방들이 보일 페이지
     roomposts = Room.objects
     return render(request, 'list.html', {'roomposts':roomposts})
+
+def result(request):
+    post_object = Room.objects #Post 모델안의 모든 객체를 post_object 변수 안에 담는다.
+    query = request.GET.get('query','') #query라는 name값을 '' 뒤에 담아오겠다.
+    if query: #쿼리 값이 존재한다면
+        post_object = post_object.filter(intro__endswith=query)
+    #쿼리값과 일치하는, 즉 쿼리값으로 끝나는 타이틀을 가진 객체를 필터링 하여 post_object에 담는다.
+    return render(request, 'result.html', {'result':post_object})
 
 def show(request, roompost_id):
     #방 세부 페이지
