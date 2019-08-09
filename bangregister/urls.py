@@ -11,6 +11,7 @@ urlpatterns = [
     path('scrap/<int:roompost_id>', views.scrap, name='scrap'),
     path('like/<int:roompost_id>', views.like, name='like'),
     path('result/', views.result, name='result'),
-    path('commentcreate/<int:roompost_id>', views.commentcreate, name='commentcreate')
+    path('commentcreate/<int:roompost_id>', views.commentcreate, name='commentcreate'),
+    path('commentupdate/<int:comment_id>', views.commentupdate, name='commentupdate'),
 
 ]
