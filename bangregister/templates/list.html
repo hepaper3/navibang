@@ -1,6 +1,6 @@
 {% extends 'base.html' %} 
 {% block content %} 
-<br><br>
+<br>
 <p class="register"><a class="btn btn-danger" href="{%url 'register'%}" role="button">방 등록하기</a></p>
 
 <!DOCTYPE html>
@@ -221,16 +221,10 @@ for (i = 0; i < acc.length; i++) {
 }
 </script>
 
-<<<<<<< HEAD
 
-=======
-{%for roompost in roomposts.all%}
-    <h1>{{roompost.intro}}</h1>
-    <p>{{roompost.pub_date}}</p>
-    <img src="{{roompost.main_img.url}}"alt="대표사진">
-    <br>
-    <a href="{% url 'show' roompost.id %}">...more</a>
->>>>>>> aab554ced5cfd113ffba8d13a97e6182736200e4
+
+
+
 {%endfor%}
 {% endblock %}
 </body>
