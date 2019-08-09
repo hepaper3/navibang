@@ -52,9 +52,13 @@ class Room(models.Model):
     elevator = models.CharField(choices=ELEVATOR_CHOICES, max_length=128)                                   #엘베유무, #라디오버튼
     option = models.CharField(choices=OPTION_CHOICES, max_length=128)                                       #옵션(에어컨, 냉장고, 세탁기, 책상, 침대, 싱크대),#체크박스
     detail = models.TextField()                                                                             #상세설명
-    main_img = models.ImageField(null=True, height_field=None, width_field=None, upload_to='images/')                            #대표사진(1장, 필수)
-    other_img = models.ImageField(null=True, height_field=None, width_field=None, upload_to='images/')                           #기타사진(주방/화장실, 필수)
-    room_img = models.ImageField(null=True, height_field=None, width_field=None, upload_to='images/')                            #방별사진(방당 1장, 선택)
+    main_img = models.ImageField(null=True, height_field=None, width_field=None)                            #대표사진(1장, 필수)
+    other_img = models.ImageField(null=True, height_field=None, width_field=None)                           #기타사진(주방/화장실, 필수)
+    room_img = models.ImageField(null=True, height_field=None, width_field=None)                            #방별사진(방당 1장, 선택)
+    address1 = models.CharField(null=True, max_length=128)
+    address2 = models.CharField(null=True, max_length=128)
+    address3 = models.CharField(null=True, max_length=128)
+    address4 = models.CharField(null=True, max_length=128)
 
     #media 만들기
 

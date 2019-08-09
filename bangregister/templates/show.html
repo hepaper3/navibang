@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block content %}
 {%load staticfiles%}
 <h1>show.html</h1>
@@ -17,12 +17,16 @@
     엘리베이터 : <p>{{roompost.elevator}}</p>
     옵션 : <p>{{roompost.option}}</p>
     상세설명 : <p>{{roompost.detail}}</p>
-    대표 사진 : <p><img src = "{{roompost.main_img.url}}" alt="대표사진"></p>
-    화장실, 주방 사진 : <p><img src = "{{roompost.other_img.url}}" alt="화장실, 주방사진"></p>
-    방별 사진 : <p><img src = "{{roompost.room_img.url}}" alt="방별 사진"></p>
+    대표 사진 : <p><img src = "{%static 'roompost.main_img'%}"></p>
+    화장실, 주방 사진 : <p><img src = "{%static 'roompost.other_img'%}"></p>
+    방별 사진 : <p><img src = "{%static 'roompost.room_img'%}"></p>
+    주소: <p>{{roompost.address1}}</p>
+    <p>{{roompost.address2}}</p>
+    <p>{{roompost.address3}}</p>
+    <p>{{roompost.address4}}</p>
+
     <br>
-    <a href="{% url 'roomupdate' roompost.id %}">수정하기</a> 
-    <br>
+    <a href="{% url 'roomupdate' roompost.id %}">수정하기</a>
     <a href="{% url 'delete' roompost.id %}" onclick="return confirm('정말 삭제하시겠습니까?')">삭제하기</a>
     <!--{%load staticfiles%}
         <img src = "{%static 'image file'%}"> -->
