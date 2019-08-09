@@ -37,7 +37,8 @@ def show(request, roompost_id):
     if User.is_anonymous:
         scrap=None
         like=None
-    else:
+    
+    if User.is_authenticated:
         scrap = Scrap.objects.filter(user=request.user, room_id=roompost)
         like = Like.objects.filter(user=request.user, room_id=roompost)
 
