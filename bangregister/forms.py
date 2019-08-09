@@ -2,12 +2,7 @@ from django import forms
 from .models import Room
 
 class RoomForm(forms.ModelForm):
-<<<<<<< HEAD
-    option = forms.CharField(widget=forms.RadioSelect(choices=((0,'냉장고'),(1,'선풍기'),(2,'에어컨'))))
-    class Meta: 
-=======
     class Meta:
->>>>>>> dad7b5b0af0c3e5a0c250b0bc0a694fab545bee2
         model = Room
         fields = ('intro','pub_date','confirmation','rent_term','start_date','end_date','price','floor','room_type','area','host_stuff','parking','pet','elevator','option','detail','main_img','other_img','room_img')
 
@@ -15,9 +10,6 @@ class RoomForm(forms.ModelForm):
           super(RoomForm, self).__init__(*args, **kwargs)
           self.fields['file'].required = False
 
-<<<<<<< HEAD
-        
-=======
         widgets = {
             'intro': forms.TextInput(
                 attrs={
@@ -88,7 +80,7 @@ class RoomForm(forms.ModelForm):
                         'class': 'form-control',
                       }
             ),
-              'option': forms.SelectMultiple(
+              'option': forms.Select(
                 attrs={
                         'class': 'form-control',
 
@@ -123,4 +115,3 @@ class RoomForm(forms.ModelForm):
                     'other_img': '화장실, 주방 사진',
                     'room_img': '방별 사진',
                  }
->>>>>>> dad7b5b0af0c3e5a0c250b0bc0a694fab545bee2
