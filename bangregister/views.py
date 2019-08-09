@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
 from .models import Room, Scrap, Like, Comment
-from .forms import RoomForm, CommentForm 
+from .forms import RoomForm, CommentForm
 from django.contrib.auth.models import User
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
@@ -117,24 +117,21 @@ def like(request, roompost_id) :
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
-def commentcreate(request, roompost_id): 
-    roompost = get_object_or_404(Room, pk=roompost_id) 
-    if request.method=='POST': 
-        form = CommentForm(request.POST) 
-        if form.is_valid(): 
+def commentcreate(request, roompost_id):
+    roompost = get_object_or_404(Room, pk=roompost_id)
+    if request.method=='POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
             comment = form.save(commit=False)
             comment.user = request.user
-            comment.room = roompost 
-            comment.save() 
-            return redirect('show', roompost_id=roompost.pk) 
-        else: 
-            redirect('show') 
-    else: 
-        form = CommentForm() 
+            comment.room = roompost
+            comment.save()
+            return redirect('show', roompost_id=roompost.pk)
+        else:
+            redirect('show')
+    else:
+        form = CommentForm()
         return render(request, 'show.html', {'form': form, 'roompost': roompost})
-
-<<<<<<< HEAD
-=======
 def commentupdate(request, comment_id):
     comment = get_object_or_404(Comment, pk=comment_id)
     if request.method=='POST':
@@ -145,7 +142,6 @@ def commentupdate(request, comment_id):
             return redirect('show', roompost_id=comment.room.pk)
         else:
             return redirect('show')
-    else: 
+    else:
         form = CommentForm(instance=comment)
         return render(request, 'show.html', {'form_comment': form, 'room': comment.room})
->>>>>>> 56eb3ff45590a8bea0fb2619df414a5f6b3e050c
