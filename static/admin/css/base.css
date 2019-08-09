@@ -441,11 +441,8 @@ select {
 }
 
 select[multiple] {
-<<<<<<< HEAD
-=======
     /* Allow HTML size attribute to override the height in the rule above. */
     height: auto;
->>>>>>> d78f511d3327b2f39c6bc7fb78199ecff1f054ca
     min-height: 150px;
 }
 
@@ -832,19 +829,12 @@ table#change-history tbody th {
 
 #header {
     width: auto;
-<<<<<<< HEAD
-    height: 40px;
-    padding: 10px 40px;
-    background: #417690;
-    line-height: 40px;
-=======
     height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
     background: #417690;
->>>>>>> d78f511d3327b2f39c6bc7fb78199ecff1f054ca
     color: #ffc;
     overflow: hidden;
 }

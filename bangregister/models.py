@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.conf import settings
 
 
 RENT_TERM_CHOICES = (
@@ -29,13 +28,29 @@ ELEVATOR_CHOICES=(
     ('있음', '있음'),
     ('없음', '없음')
 )
-OPTION_CHOICES=(
-    ('에어컨', '에어컨'),
-    ('냉장고', '냉장고'),
-    ('세탁기', '세탁기'),
-    ('책상', '책상'),
-    ('침대', '침대'),
-    ('침대', '싱크대')
+AIRCON_CHOICES=(
+    ('있음', '있음'),
+    ('없음', '없음')
+)
+FRIDGE_CHOICES=(
+    ('있음', '있음'),
+    ('없음', '없음')
+)
+WASHINGMACHINE_CHOICES=(
+    ('있음', '있음'),
+    ('없음', '없음')
+)
+DESK_CHOICES=(
+    ('있음', '있음'),
+    ('없음', '없음')
+)
+BED_CHOICES=(
+    ('있음', '있음'),
+    ('없음', '없음')
+)
+SINK_CHOICES=(
+    ('있음', '있음'),
+    ('없음', '없음')
 )
 # Create your models here.
 class Room(models.Model):
@@ -53,9 +68,14 @@ class Room(models.Model):
     area = models.CharField(max_length=200)                                                                 #면적(평/m2)
     host_stuff = models.CharField(choices=HOST_STUFF_CHOICES, max_length=128)                               #집주인 물건 유무, #라디오버튼
     parking = models.CharField(choices=PARKING_CHOICES, max_length=128)                                     #주차장 유무, #라디오버튼
-    pet = models.CharField(choices=PET_CHOICES, max_length=128)                                             #애완동물 동반 가능 여부, #라디오버튼
-    elevator = models.CharField(choices=ELEVATOR_CHOICES, max_length=128)                                   #엘베유무, #라디오버튼
-    option = models.CharField(choices=OPTION_CHOICES, max_length=128)                                       #옵션(에어컨, 냉장고, 세탁기, 책상, 침대, 싱크대),#체크박스
+    pet = models.CharField(choices=PET_CHOICES, max_length=128, null=True)                                             #애완동물 동반 가능 여부, #라디오버튼
+    elevator = models.CharField(choices=ELEVATOR_CHOICES, max_length=128, null=True)                                   #엘베유무, #라디오버튼
+    aircon = models.CharField(choices=AIRCON_CHOICES, max_length=128, null=True)
+    fridge = models.CharField(choices=FRIDGE_CHOICES, max_length=128, null=True)
+    washingmachine = models.CharField(choices=WASHINGMACHINE_CHOICES, max_length=128, null=True)
+    desk = models.CharField(choices=DESK_CHOICES, max_length=128, null=True)
+    bed = models.CharField(choices=BED_CHOICES, max_length=128, null=True)
+    sink = models.CharField(choices=SINK_CHOICES, max_length=128, null=True)                                  #옵션(에어컨, 냉장고, 세탁기, 책상, 침대, 싱크대),#체크박스
     detail = models.TextField()                                                                             #상세설명
     main_img = models.ImageField(null=True, height_field=None, width_field=None)                            #대표사진(1장, 필수)
     other_img = models.ImageField(null=True, height_field=None, width_field=None)                           #기타사진(주방/화장실, 필수)

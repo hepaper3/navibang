@@ -2,43 +2,6 @@
 
 <body>
 
-<!--<nav class="nav-extended">
-        <div class="nav-wrapper">
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <a class="navbar-brand" href="{% url 'home' %}" style="color:white">나비방</a>
-
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-                {% if user.is_authenticated %}
-                <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" style="color:white; font-size:1.5rem;" id="navbarDropdown " role="button" data-toggle="dropdown"
-                             aria-haspopup="true" aria-expanded="false">환영합니다. {{ user.username }} 님!</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" style="color:rgb(26, 21, 21)" href="javascript:{document.getElementById('logout').submit()}">로그아웃</a>
-                        <form id="logout" method="POST" action="{% url 'logout' %}">
-                             {% csrf_token %} <input type="hidden" />
-                        </form>
-                        </div>
-                    </li>
-                    {% else %}
-            <li><a href="{% url 'signup' %}" class="list">회원가입</a></li>
-            <li><a href="{% url 'login' %}" class="list">로그인</li>
-            {% endif %}
-          </ul>
-
-        </div>
-        <div class="nav-content">
-          <ul class="tabs tabs-transparent">
-            <li ><a href="{% url 'list' %}" class = "list" target="_self">방 보러가기</a></li>
-            <li><a href="{% url 'register' %}" class = "list" target="_self">방 등록하기</a></li>
-            <li ><a href="{% url 'show_profile' %}" class = "list" target="_self">마이 페이지</a></li>
-          </ul>
-        </div>
-      </nav>
-
-</body>
-
--->
-
 {% load bootstrap4 %}
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}

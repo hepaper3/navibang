@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
+from bangregister.models import Scrap, Room
 
 # Create your views here.
 
@@ -79,3 +80,13 @@ def logout(request) :
         auth.logout(request)
         return redirect('home')
     return render(request, 'signup.html')
+
+@login_required
+def my_scrap(request) :
+    scraps = Scrap.objects.filter(user=request.user)
+    return render(request, 'my_scrap.html', {'scraps' : scraps})
+
+@login_required
+def my_post(request) :
+    posts = Room.objects.filter(creator=request.user)
+    return render(request, 'my_post.html', {'posts':posts})
