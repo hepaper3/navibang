@@ -19,19 +19,19 @@ def show(request, roompost_id):
     return render(request, 'show.html', {'roompost' : roompost})
 
 def roomupdate(request, roompost_id):
-    roompost = get_object_or_404(Room, pk = roompost_id) 
+    roompost = get_object_or_404(Room, pk = roompost_id)
     if request.method == 'POST':
-        form = RoomForm(request.POST, instance=roompost) 
+        form = RoomForm(request.POST, instance=roompost)
         if form.is_valid():
-            roompost = form.save(commit=False) 
-            roompost.save() 
+            roompost = form.save(commit=False)
+            roompost.save()
             return redirect('show', roompost_id=roompost.pk)
-    else: 
+    else:
         form = RoomForm(instance=roompost)
         return render(request, 'edit.html', {'form': form})
 
 def register(request):
-    #방 등록 페이지 
+    #방 등록 페이지
     if request.method == 'POST':
         form = RoomForm(request.POST, request.FILES)
         if form.is_valid():
@@ -39,7 +39,7 @@ def register(request):
             roompost.save()
             return redirect('list')
     else:
-        form = RoomForm() 
+        form = RoomForm()
     return render(request, 'register.html', {'form':form})
 
 def edit(request):
