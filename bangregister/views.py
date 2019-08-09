@@ -133,19 +133,3 @@ def commentcreate(request, roompost_id):
         form = CommentForm() 
         return render(request, 'show.html', {'form': form, 'roompost': roompost})
 
-<<<<<<< HEAD
-=======
-def commentupdate(request, comment_id):
-    comment = get_object_or_404(Comment, pk=comment_id)
-    if request.method=='POST':
-        form =CommentForm(request.POST, instance=comment)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.save()
-            return redirect('show', roompost_id=comment.room.pk)
-        else:
-            return redirect('show')
-    else: 
-        form = CommentForm(instance=comment)
-        return render(request, 'show.html', {'form_comment': form, 'room': comment.room})
->>>>>>> 56eb3ff45590a8bea0fb2619df414a5f6b3e050c
