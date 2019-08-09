@@ -1,5 +1,5 @@
 from django import forms
-from .models import Room
+from .models import Room, Comment 
 from django.forms.widgets import CheckboxSelectMultiple
 
 class RoomForm(forms.ModelForm):
@@ -190,3 +190,9 @@ class RoomForm(forms.ModelForm):
                         'address4' : '참고항목',
 
                   }
+
+
+class CommentForm(forms.ModelForm): 
+  class Meta: 
+    model = Comment 
+    fields = ['content']
