@@ -4,7 +4,7 @@
 <h1>show.html</h1>
     소개글 : <h1>{{roompost.intro}} </h1>
     작성 날짜 : <p>{{roompost.pub_date}}</p>
-    확인서 : <p><a href = "{%static 'roompost.confirmation'%}" download>다운로드</a></p>
+    확인서 : <p><a href = "{{roompost.confirmation.url}}" download>다운로드</a></p>
     임대 유형 : <p>{{roompost.rent_term}}</p>
     임대 기간 : <p>{{roompost.start_date}} ~ {{roompost.end_date}}</p>
     금액 : <p>{{roompost.price}}</p>
