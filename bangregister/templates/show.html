@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %} 
 
 
@@ -60,3 +61,53 @@
     </div>
     <br><br>
 {% endblock %}
+=======
+{% extends 'base.html' %}
+{% block content %}
+{%load staticfiles%}
+<h1>show.html</h1>
+    소개글 : <h1>{{roompost.intro}} </h1>
+    작성 날짜 : <p>{{roompost.pub_date}}</p>
+    확인서 : <p><a href = "{{roompost.confirmation.url}}" download>다운로드</a></p>
+    임대 유형 : <p>{{roompost.rent_term}}</p>
+    임대 기간 : <p>{{roompost.start_date}} ~ {{roompost.end_date}}</p>
+    금액 : <p>{{roompost.price}}</p>
+    층 : <p>{{roompost.floor}}</p>
+    방 유형 : <p>{{roompost.room_type}}</p>
+    면적(평) : <p>{{roompost.area}}</p>
+    집주인 짐 유무 : <p>{{roompost.host_stuff}}</p>
+    주차 : <p>{{roompost.parking}}</p>
+    애완동물 동반 : <p>{{roompost.pet}}</p>
+    엘리베이터 : <p>{{roompost.elevator}}</p>
+    옵션 : <p>{{roompost.option}}</p>
+    상세설명 : <p>{{roompost.detail}}</p>
+    대표 사진 : <p><img src = "{%static 'roompost.main_img'%}"></p>
+    화장실, 주방 사진 : <p><img src = "{%static 'roompost.other_img'%}"></p>
+    방별 사진 : <p><img src = "{%static 'roompost.room_img'%}"></p>
+    주소: <p>{{roompost.address1}}</p>
+    <p>{{roompost.address2}}</p>
+    <p>{{roompost.address3}}</p>
+    <p>{{roompost.address4}}</p>
+
+    <br>
+    <a href="{% url 'roomupdate' roompost.id %}">수정하기</a>
+    <a href="{% url 'delete' roompost.id %}" onclick="return confirm('정말 삭제하시겠습니까?')">삭제하기</a>
+    <!--{%load staticfiles%}
+        <img src = "{%static 'image file'%}"> -->
+    
+    {% if scrap %}
+        <a href="{% url 'scrap' roompost.id %}">스크랩 취소</a>
+    {% else %}
+        <a href="{% url 'scrap' roompost.id %}">스크랩</a>
+    {% endif %}
+
+        
+    {% if like %}
+        <a href="{% url 'like' roompost.id %}">좋아요 취소</a>
+    {% else %}
+        <a href="{% url 'like' roompost.id %}">좋아요</a>
+    {% endif %}
+
+
+{% endblock %}
+>>>>>>> aab554ced5cfd113ffba8d13a97e6182736200e4

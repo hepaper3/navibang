@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 
 class UserForm(forms.ModelForm):
+    
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'email')
@@ -66,4 +67,4 @@ class ProfileForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(ProfileForm, self).__init__(*args, **kwargs)
-        self.fields['profile_img'].required = False
+        self.fields['profile_img'].required = True

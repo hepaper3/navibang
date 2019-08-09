@@ -14,7 +14,7 @@ class Profile(models.Model):
     birth_date = models.DateField(null=True, blank=True)
     gender = models.CharField(choices=GENDER_CHOICES, max_length=128, blank=True)
     self_introduce = models.TextField(max_length=500, blank=True)
-    profile_img = models.FileField(null=True, blank=True)
+    profile_img = models.ImageField(null=True, blank=True)
 
     def __str__(self) :
         return self.user.username

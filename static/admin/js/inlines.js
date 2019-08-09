@@ -63,8 +63,13 @@
                 var template = $("#" + options.prefix + "-empty");
                 var row = template.clone(true);
                 row.removeClass(options.emptyCssClass)
+<<<<<<< HEAD
+                .addClass(options.formCssClass)
+                .attr("id", options.prefix + "-" + nextIndex);
+=======
                     .addClass(options.formCssClass)
                     .attr("id", options.prefix + "-" + nextIndex);
+>>>>>>> d78f511d3327b2f39c6bc7fb78199ecff1f054ca
                 if (row.is("tr")) {
                     // If the forms are laid out in table rows, insert
                     // the remove button into the last table cell:
@@ -131,6 +136,18 @@
 
     /* Setup plugin defaults */
     $.fn.formset.defaults = {
+<<<<<<< HEAD
+        prefix: "form",          // The form prefix for your django formset
+        addText: "add another",      // Text for the add link
+        deleteText: "remove",      // Text for the delete link
+        addCssClass: "add-row",      // CSS class applied to the add link
+        deleteCssClass: "delete-row",  // CSS class applied to the delete link
+        emptyCssClass: "empty-row",    // CSS class applied to the empty row
+        formCssClass: "dynamic-form",  // CSS class applied to each form in a formset
+        added: null,          // Function called each time a new form is added
+        removed: null,          // Function called each time a form is deleted
+        addButton: null       // Existing add button to use
+=======
         prefix: "form", // The form prefix for your django formset
         addText: "add another", // Text for the add link
         deleteText: "remove", // Text for the delete link
@@ -141,6 +158,7 @@
         added: null, // Function called each time a new form is added
         removed: null, // Function called each time a form is deleted
         addButton: null // Existing add button to use
+>>>>>>> d78f511d3327b2f39c6bc7fb78199ecff1f054ca
     };
 
 
@@ -149,8 +167,13 @@
         var $rows = $(this);
         var alternatingRows = function(row) {
             $(selector).not(".add-row").removeClass("row1 row2")
+<<<<<<< HEAD
+            .filter(":even").addClass("row1").end()
+            .filter(":odd").addClass("row2");
+=======
                 .filter(":even").addClass("row1").end()
                 .filter(":odd").addClass("row2");
+>>>>>>> d78f511d3327b2f39c6bc7fb78199ecff1f054ca
         };
 
         var reinitDateTimeShortCuts = function() {
