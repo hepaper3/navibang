@@ -1,6 +1,48 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        
+    <style>
+        .list{
+            font-size: 2rem;
+        }
+        
+            
+            
+   .image-container {
+            position: relative;
+}
+
+        .image {
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        
+        
+
+        </style>
+    </head>
+    <br><br>
+<!--<div class="container" style="border:2px solid rgb(252, 157, 150); border-radius: 10px;">
     {% if user.is_authenticated %}
         username : {{ user.username }} <br>
         first name : {{ user.first_name }} <br>
@@ -13,6 +55,107 @@
         slef introduce : {{ user.profile.self_introduce }} <br>
 
 
-    {% endif %}
+    {% endif %}-->
 
+
+<div class="container">
+        {% if user.is_authenticated %}
+        
+        <div class="row">
+            
+           <div class="col-md-7 ">
+               
+    <div class="panel panel-default">
+            
+      <div class="panel-heading"> 
+           
+           <h4 >Profile</h4></div>
+       <div class="panel-body">
+           
+        <div class="box box-info">
+            
+                <div class="box-body">
+                         <div class="col-sm-8">
+                         <p id="img"><div id="img"> <img src="{{ user.profile.profile_img.url }}" width="200"> </p>
+                    
+                    <input id="profile-image-upload" class="hidden" type="file">
+    <div style="color:#999;" ></div>
+                    <!--Upload Image Js And Css-->
+               
+                  
+       
+                    
+                    
+                         
+                         
+                        <!-- </div>
+                  
+                  <br>-->
+        
+                  <!-- /input-group -->
+                </div>
+                <div class="col-sm-6">
+                <h4 style="color:#00b1b1;">{{ user.username }}</h4></span>          
+                </div>
+                <div class="clearfix"></div>
+                <hr style="margin:5px 0 5px 0;">
+        
+                  
+    <div class="col-sm-5 col-xs-6 tital " >First Name :</div><div class="col-sm-7 col-xs-6 ">{{ user.first_name }}</div>
+         <div class="clearfix"></div>
+    <div class="bot-border"></div>
+    
+    <div class="col-sm-5 col-xs-6 tital " >Last Name :</div><div class="col-sm-7"> {{ user.last_name }}</div>
+      <div class="clearfix"></div>
+    <div class="bot-border"></div>
+    
+    <div class="col-sm-5 col-xs-6 tital " >Age :</div><div class="col-sm-7"> {{ user.profile.age }}</div>
+      <div class="clearfix"></div>
+    <div class="bot-border"></div>
+    
+    <div class="col-sm-5 col-xs-6 tital " >Birth day :</div><div class="col-sm-7">{{ user.profile.birth_date }}</div>
+    
+      <div class="clearfix"></div>
+    <div class="bot-border"></div>
+    
+    <div class="col-sm-5 col-xs-6 tital " >Gender :</div><div class="col-sm-7">{{ user.profile.gender }}</div>
+    
+      <div class="clearfix"></div>
+    <div class="bot-border"></div>
+    
+    <div class="col-sm-5 col-xs-6 tital " >Self introduce :</div><div class="col-sm-7">{{ user.profile.self_introduce }}</div>
+            
+    
+    
+    
+    
+                
+              </div>
+              
+    
+            </div>
+           
+                
+        </div> 
+        </div>
+    </div>  
+        <script>
+                  $(function() {
+        $('#profile-image1').on('click', function() {
+            $('#profile-image-upload').click();
+        });
+    });       
+                  </script> 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+       </div>
+       {% endif %}
+    </div>
 {% endblock %}

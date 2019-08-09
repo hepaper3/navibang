@@ -30,10 +30,14 @@ ELEVATOR_CHOICES=(
 OPTION_CHOICES=(
     ('에어컨', '에어컨'),
     ('냉장고', '냉장고'),
-    ('["냉장고", "세탁기"]', '["냉장고", "세탁기"]')
+    ('세탁기', '세탁기'),
+    ('책상', '책상'),
+    ('침대', '침대'),
+    ('침대', '싱크대')
 )
 # Create your models here.
 class Room(models.Model):
+    creator = models.ForeignKey(User, null=True, on_delete=models.CASCADE, related_name='rooms')
     intro = models.CharField(max_length=200)                                                                #방 한줄 소개
     pub_date = models.DateField(null=True, auto_now=False, auto_now_add=False)                                         #등록 일자
     confirmation = models.FileField(null=True)                                                              #확인서 파일 첨부

@@ -1,10 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
-    회원가입이 완료되었습니다!
+<head>
+    <style>
+        .container{
+            text-align: center;
+        }
+    </style>
+</head>
+<br><br>
+<div class="container">
+        <h1 class="display-4">회원가입이 완료되었습니다!</h1>
+        
+        <hr class="my-4">
+        
+        <p class="lead">
+          <a class="btn btn-danger btn-lg" href="{% url 'home' %}" role="button">홈으로 가기</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'show_profile' %}" role="button">회원정보 보기</a>
+        </p>
+      </div>
+    
     
     <br>
 
-    <a href="{% url 'home' %}">홈으로 가기</a> <br> 
-    <a href="{% url 'show_profile' %}">회원정보 보기</a>
+    
 
 {% endblock %}
