@@ -42,7 +42,7 @@ SITE_ID = 1
 DISQUS_WEBSITE_SHORTNAME = 'kim-8'
 
 MIDDLEWARE = [
-    #'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
