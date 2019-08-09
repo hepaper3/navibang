@@ -80,7 +80,7 @@ class RoomForm(forms.ModelForm):
                         'class': 'form-control',
                       }
             ),
-              'option': forms.SelectMultiple(
+              'option': forms.Select(
                 attrs={
                         'class': 'form-control',
 

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 RENT_TERM_CHOICES = (
    ('long_rent', '장기(2주이상)'),
@@ -58,5 +59,22 @@ class Room(models.Model):
 
     #media 만들기
 
+    #스크랩
+    users = models.ManyToManyField(User, through='Scrap')
+    users = models.ManyToManyField(User, through='Like')
+
     def __str__(self):
         return self.intro
+
+
+
+
+
+class Scrap(models.Model) :
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    room = models.ForeignKey(Room, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+class Like(models.Model) :
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    room = models.ForeignKey(Room, on_delete=models.CASCADE)
