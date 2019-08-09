@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+
+
+{% block content %}
+{%load staticfiles%}
+
+    <h1>my_scrap.html</h1>
+
+    {% for scrap in scraps.all %}
+        <br>
+        <a href="{% url 'show' scrap.room.id %}">{{scrap.room.intro}} </a>
+        <br>
+    {% endfor %}
+
+{% endblock %}
