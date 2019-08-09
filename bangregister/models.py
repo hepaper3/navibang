@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.conf import settings
 
 RENT_TERM_CHOICES = (
    ('장기(2주이상)', '장기(2주이상)'),
@@ -37,6 +38,8 @@ OPTION_CHOICES=(
 )
 # Create your models here.
 class Room(models.Model):
+    creator = models.ForeignKey(User, null=True, on_delete=models.CASCADE, related_name='rooms')
+    
     intro = models.CharField(max_length=200)                                                                #방 한줄 소개
     pub_date = models.DateField(null=True, auto_now=False, auto_now_add=False)                                         #등록 일자
     confirmation = models.FileField(null=True)                                                              #확인서 파일 첨부

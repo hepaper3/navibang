@@ -2,7 +2,13 @@
 {% block content %}
 {%load staticfiles%}
 <h1>show.html</h1>
+
     소개글 : <h1>{{roompost.intro}} </h1>
+
+    <span class="writer_name">
+        글쓴이 : <p>{{ roompost.creator }}</p>
+    </span>
+
     작성 날짜 : <p>{{roompost.pub_date}}</p>
     확인서 : <p><a href = "{%static 'roompost.confirmation'%}" download>다운로드</a></p>
     임대 유형 : <p>{{roompost.rent_term}}</p>
@@ -25,9 +31,18 @@
     <p>{{roompost.address3}}</p>
     <p>{{roompost.address4}}</p>
 
-    <br>
-    <a href="{% url 'roomupdate' roompost.id %}">수정하기</a>
-    <a href="{% url 'delete' roompost.id %}" onclick="return confirm('정말 삭제하시겠습니까?')">삭제하기</a>
+
+
+    <br><br><br><br>
+    
+    <span id="user_name" style="display:none;">{{ user.username }}</span>
+
+    {% if user_authority %}
+        <a href="{% url 'roomupdate' roompost.id %}">수정하기</a>
+        <a href="{% url 'delete' roompost.id %}" onclick="return confirm('정말 삭제하시겠습니까?')">삭제하기</a>
+    {% endif %}
+
+
     <!--{%load staticfiles%}
         <img src = "{%static 'image file'%}"> -->
     
