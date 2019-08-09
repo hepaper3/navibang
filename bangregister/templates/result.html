@@ -185,7 +185,6 @@ height: 100%;
 }
 
 
-
     </style>
     </head>
 
@@ -219,47 +218,50 @@ for (i = 0; i < acc.length; i++) {
 
 </script>
 
-<form action="{% url 'result' %}" method="get">
+<div align="middle">
+  <form action="{% url 'result' %}" method="get">
 
-  <select name="query0">
-    <option value="{{None}}">-대여 기간-</option>
-    <option value="장기(2주이상)">장기(2주이상)</option>
-    <option value="단기(2주미만))">단기(2주미만)</option>
-  </select>
+    <select name="query0">
+      <option value="{{None}}">-대여 기간-</option>
+      <option value="장기(2주이상)">장기(2주이상)</option>
+      <option value="단기(2주미만))">단기(2주미만)</option>
+    </select>
 
-  <select name="query1">
-    <option value="{{None}}">-방 타입-</option>
-    <option value="원룸">원룸</option>
-    <option value="투룸">투룸</option>
-    <option value="복층형 원룸">복층형 원룸</option>
-    <option value="쓰리룸+">쓰리룸+</option>
-  </select>
+    <select name="query1">
+      <option value="{{None}}">-방 타입-</option>
+      <option value="원룸">원룸</option>
+      <option value="투룸">투룸</option>
+      <option value="복층형 원룸">복층형 원룸</option>
+      <option value="쓰리룸+">쓰리룸+</option>
+    </select>
 
-  <select name="query2">
-    <option value="{{None}}">-집주인 짐-</option>
-    <option value="있음">있음</option>
-    <option value="없음">없음</option>
-  </select>
+    <select name="query2">
+      <option value="{{None}}">-집주인 짐-</option>
+      <option value="있음">있음</option>
+      <option value="없음">없음</option>
+    </select>
 
-  <select name="query3">
-    <option value="{{None}}">-주차공간-</option>
-    <option value="있음">있음</option>
-    <option value="없음">없음</option>
-  </select>
+    <select name="query3">
+      <option value="{{None}}">-주차공간-</option>
+      <option value="있음">있음</option>
+      <option value="없음">없음</option>
+    </select>
 
-  <select name="query4">
-    <option value="{{None}}">-반려동물-</option>
-    <option value="가능">가능</option>
-    <option value="불가능">불가능</option>
-  </select>
+    <select name="query4">
+      <option value="{{None}}">-반려동물-</option>
+      <option value="가능">가능</option>
+      <option value="불가능">불가능</option>
+    </select>
 
-  <select name="query5">
-    <option value="{{None}}">-엘레베이터-</option>
-    <option value="있음)">있음</option>
-    <option value="없음">없음</option>
-  </select>
-    <input type="submit" value="search">
-</form>
+    <select name="query5">
+      <option value="{{None}}">-엘레베이터-</option>
+      <option value="있음)">있음</option>
+      <option value="없음">없음</option>
+    </select>
+      <input type="submit" value="search">
+  </form>
+
+</div>
 
 
 <!--img-responsive-->
