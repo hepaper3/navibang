@@ -144,4 +144,4 @@ def commentupdate(request, comment_id):
             return redirect('show')
     else: 
         form = CommentForm(instance=comment)
-        return render(request, 'show.html', {'form_comment': form, 'room': comment.roompost})
+        return render(request, 'show.html', {'form_comment': form, 'room': comment.room})
