@@ -1,15 +1,22 @@
+
+
 {% extends 'base.html' %} 
 
-
+<body style="margin:10px; padding:20px">
+<div style = "margin:10px; padding:20px">
 {% block content %}
 {%load staticfiles%}
 
-    <h1>my_scrap.html</h1>
 
-    {% for scrap in scraps.all %}
-        <br>
-        <a href="{% url 'show' scrap.room.id %}">{{scrap.room.intro}} </a>
-        <br>
-    {% endfor %}
 
+    
+        <h1>내가 스크랩한 글</h1>
+
+        {% for scrap in scraps.all %}
+            <br>
+            <a href="{% url 'show' scrap.room.id %}">{{scrap.room.intro}} </a>
+            <br>
+        {% endfor %}
+    </div>
 {% endblock %}
+</body>

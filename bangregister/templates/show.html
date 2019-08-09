@@ -19,38 +19,43 @@
 <div class="container" style="border:2px solid rgb(252, 157, 150); border-radius: 10px;">
 
 
-    소개글 : <h1>{{roompost.intro}} </h1>
+    <h1>{{roompost.intro}} </h1>
 
     <span class="writer_name">
-        글쓴이 : <p>{{ roompost.creator }}</p>
+     <p style="text-align:right">{{ roompost.creator }}</p>
     </span>
 
-    작성 날짜 : <p>{{roompost.pub_date}}</p>
-    확인서 : <p><a href = "{{roompost.confirmation.url}}" download>다운로드</a></p>
-    임대 유형 : <p>{{roompost.rent_term}}</p>
-    임대 기간 : <p>{{roompost.start_date}} ~ {{roompost.end_date}}</p>
-    금액 : <p>{{roompost.price}}</p>
-    층 : <p>{{roompost.floor}}</p>
-    방 유형 : <p>{{roompost.room_type}}</p>
-    면적(평) : <p>{{roompost.area}}</p>
-    집주인 짐 유무 : <p>{{roompost.host_stuff}}</p>
-    주차 : <p>{{roompost.parking}}</p>
-    애완동물 동반 : <p>{{roompost.pet}}</p>
-    엘리베이터 : <p>{{roompost.elevator}}</p>
-    에어컨 : <p>{{roompost.aircon}}</p>
-    냉장고 : <p>{{roompost.fridge}}</p>
-    세탁기 : <p>{{roompost.washingmachine}}</p>
-    책상 : <p>{{roompost.desk}}</p>
-    침대 : <p>{{roompost.bed}}</p>
-    싱크대 : <p>{{roompost.sink}}</p>
-    상세설명 : <p>{{roompost.detail}}</p>
-    대표 사진 : <p><img src = "{{roompost.main_img.url}}" width=500></p>
+    <p style="text-align:right">{{roompost.pub_date}}</p>
+
+    메인 사진  <p><img src = "{{roompost.main_img.url}}" width=500></p>
     화장실, 주방 사진 : <p><img src = "{{roompost.other_img.url}}" width=500></p>
-    방별 사진 : <p><img src = "{{roompost.room_img.url}}" width=500></p>
-    주소: <p>{{roompost.address1}}</p>
-    <p>{{roompost.address2}}</p>
-    <p>{{roompost.address3}}</p>
-    <p>{{roompost.address4}}</p>
+    방별 사진  <p><img src = "{{roompost.room_img.url}}" width=500></p>
+
+    <p>주소:{{roompost.address1}}
+    {{roompost.address2}}
+    {{roompost.address3}}
+    {{roompost.address4}}</p>
+
+
+    <p>확인서 : <a href = "{{roompost.confirmation.url}}" download>다운로드</a></p>
+    <p>임대 유형 : {{roompost.rent_term}}</p>
+    <p>임대 기간 : {{roompost.start_date}} ~ {{roompost.end_date}}</p>
+    <p>금액 : {{roompost.price}}</p>
+   <p> 층 : {{roompost.floor}}</p>
+    <p>방 유형 : {{roompost.room_type}}</p>
+    <p>면적(평) : {{roompost.area}}</p>
+    <p>집주인 짐 유무 : {{roompost.host_stuff}}</p>
+    <p>주차 : {{roompost.parking}}</p>
+    <p>애완동물 동반 : {{roompost.pet}}</p>
+    <p>엘리베이터 : {{roompost.elevator}}</p>
+    <p>에어컨 : {{roompost.aircon}}</p>
+    <p>냉장고 : {{roompost.fridge}}</p>
+    <p>세탁기 : {{roompost.washingmachine}}</p>
+    <p>책상 : {{roompost.desk}}</p>
+    <p>침대 : {{roompost.bed}}</p>
+    <p>싱크대 : {{roompost.sink}}</p>
+    <p>상세설명 : {{roompost.detail}}</p>
+
 
 
 
@@ -91,13 +96,12 @@
     <form method='POST'> 
         {% csrf_token %} 
         {{form}} 
-        <button type='submit'>댓글 등록</button> 
+        <button class="btn btn-outline-danger" type='submit'>댓글 등록</button> 
     </form>
-    <h4>댓글 목록</h4> 
+    <h4>댓글</h4> 
     <form method='POST'> 
-        {% csrf_token %} 
+        {% csrf_token %}
         {{ form_comment }} 
-        <button type='submit'>댓글 수정</button> 
     </form> 
     {% for comment in roompost.comment_set.all %} 
         {{comment.user}}
