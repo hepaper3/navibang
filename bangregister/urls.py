@@ -12,6 +12,5 @@ urlpatterns = [
     path('like/<int:roompost_id>', views.like, name='like'),
     path('result/', views.result, name='result'),
     path('commentcreate/<int:roompost_id>', views.commentcreate, name='commentcreate'),
-    path('commentupdate/<int:comment_id>', views.commentupdate, name='commentupdate'),
 
 ]

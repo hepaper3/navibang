@@ -103,8 +103,9 @@
         <button type='submit'>댓글 수정</button> 
     </form> 
     {% for comment in roompost.comment_set.all %} 
-        {{comment.content}} 
-        <a href="{% url 'commentupdate' comment.id %}">[수정]</a> 
+        {{comment.user}}
+        {{comment.updated_at}}
+        {{comment.content}}  
         <br/>
     {% endfor %}
 
