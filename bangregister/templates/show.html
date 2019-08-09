@@ -18,59 +18,7 @@
 </head>
 <br><br>
 <div class="container" style="border:2px solid rgb(252, 157, 150); border-radius: 10px;">
-        <br>
-     <h1>{{roompost.intro}} </h1>
-    <label for="pubdate"><b>작성 날짜 : </b></label>
-    <p>{{roompost.pub_date}}</p>
-    <label for="confirm"><b>확인서 : </b></label>
-    <p><a href = "{%static 'roompost.confirmation'%}" download id="confirm">다운로드</a></p>
-    <label for="rentterm"><b>임대 유형 : </b></label>
-    <p>{{roompost.rent_term}}</p>
-    <label for="date"><b>임대 기간 : </b></label>
-    <p>{{roompost.start_date}} ~ {{roompost.end_date}}</p>
-    <label><b>금액 : </b></label>
-    <p>{{roompost.price}}</p>
-    <label><b>층 : </b></label>
-    <p>{{roompost.floor}}</p>
-    <label><b>방 유형 : </b></label>
-    <p>{{roompost.room_type}}</p>
-    <label><b>면적(평) : </b></label>
-    <p>{{roompost.area}}</p>
-    <label><b>집주인 짐 유무 : </b></label>
-    <p>{{roompost.host_stuff}}</p>
-    <label><b>주차 : </b></label>
-    <p>{{roompost.parking}}</p>
-    <label><b>애완동물 동반 : </b></label>
-    <p>{{roompost.pet}}</p>
-    <label><b>엘리베이터 : </b></label>
-    <p>{{roompost.elevator}}</p>
-    <label><b>옵션 : </b></label>
-    <p>{{roompost.option}}</p>
-    <label><b>상세설명 : </b></label>
-    <p>{{roompost.detail}}</p>
-    <label><b>대표 사진 : </b></label>
-    <p><img src = "{%static 'roompost.main_img'%}"></p>
-    <label><b>화장실, 주방 사진 : </b></label>
-    <p><img src = "{%static 'roompost.other_img'%}"></p>
-    <label><b>방별 사진 : </b></label>
-    <p><img src = "{%static 'roompost.room_img'%}"></p>
-    <label><b>주소: </b></label>
-    <p>{{roompost.address1}}</p>
-    <p>{{roompost.address2}}</p>
-    <p>{{roompost.address3}}</p>
-    <p>{{roompost.address4}}</p>
-    <br>
-    <a class="btn btn-outline-danger" href="{% url 'roomupdate' roompost.id %}" role="button">수정하기</a>
-    <a class="btn btn-outline-danger" href="{% url 'delete' roompost.id %}" role="button" onclick="return confirm('정말 삭제하시겠습니까?')">삭제하기</a>
-    <br><br>
-<<<<<<< HEAD
 
-=======
-{% endblock %}
-=======
-{% extends 'base.html' %}
-{% block content %}
-{%load staticfiles%}
 <h1>show.html</h1>
 
     소개글 : <h1>{{roompost.intro}} </h1>
@@ -93,9 +41,9 @@
     엘리베이터 : <p>{{roompost.elevator}}</p>
     옵션 : <p>{{roompost.option}}</p>
     상세설명 : <p>{{roompost.detail}}</p>
-    대표 사진 : <p><img src = "{%static 'roompost.main_img'%}"></p>
-    화장실, 주방 사진 : <p><img src = "{%static 'roompost.other_img'%}"></p>
-    방별 사진 : <p><img src = "{%static 'roompost.room_img'%}"></p>
+    대표 사진 : <p><img src = "{{roompost.main_img.url}}"></p>
+    화장실, 주방 사진 : <p><img src = "{{roompost.other_img.url}}"></p>
+    방별 사진 : <p><img src = "{{roompost.room_img.url}}"></p>
     주소: <p>{{roompost.address1}}</p>
     <p>{{roompost.address2}}</p>
     <p>{{roompost.address3}}</p>

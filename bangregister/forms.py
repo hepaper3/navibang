@@ -1,5 +1,6 @@
 from django import forms
 from .models import Room
+from django.forms.widgets import CheckboxSelectMultiple
 
 class RoomForm(forms.ModelForm):
     
@@ -18,6 +19,7 @@ class RoomForm(forms.ModelForm):
         def __init__(self, *args, **kwargs):
           super(RoomForm, self).__init__(*args, **kwargs)
           self.fields['file'].required = False
+          option = forms.ModelMultipleChoiceField(choices=Room.OPTION_CHOICES, widget=forms.CheckboxSelectMultiple, required=False)
 
         widgets = {
             'intro': forms.TextInput(
@@ -101,36 +103,36 @@ class RoomForm(forms.ModelForm):
                         'rows': '5',
                       }
             ),
-            'address1':forms.TextInput(
-              attrs={
-                  'type':'text' ,
-                  'id' :'sample3_postcode' ,
-                  'placeholder' : '우편번호',
-                  }
-          ),
+                'address1':forms.TextInput(
+                attrs={
+                    'type':'text' ,
+                    'id' :'sample3_postcode' ,
+                    'placeholder' : '우편번호',
+                    }
+            ),
 
-          'address2':forms.TextInput(
-              attrs={
-                  'type':'text' ,
-                  'id' :'sample3_address' ,
-                  'placeholder' : '주소',
-              }
-      ),
-          'address3':forms.TextInput(
-              attrs={
-                  'type':'text' ,
-                  'id' :'sample3_detailAddress' ,
-                  'placeholder' : '상세주소',
-              }
-      ),
+            'address2':forms.TextInput(
+                attrs={
+                    'type':'text' ,
+                    'id' :'sample3_address' ,
+                    'placeholder' : '주소',
+                }
+        ),
+            'address3':forms.TextInput(
+                attrs={
+                    'type':'text' ,
+                    'id' :'sample3_detailAddress' ,
+                    'placeholder' : '상세주소',
+                }
+        ),
 
-          'address4':forms.TextInput(
-              attrs={
-                  'type':'text' ,
-                  'id' :'sample3_extraAddress' ,
-                  'placeholder' : '참고항목',
-              }
-      ),
+            'address4':forms.TextInput(
+                attrs={
+                    'type':'text' ,
+                    'id' :'sample3_extraAddress' ,
+                    'placeholder' : '참고항목',
+                }
+        ),
         }
 
         labels = {
