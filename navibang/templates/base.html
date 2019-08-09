@@ -2,117 +2,7 @@
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
 
- <!-- Compiled and minified CSS -->
-<!--<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-</head>-->
-<!--<body>
-    <nav class="nav-extended">
-        <div class="nav-wrapper">
-        <a href="{%url 'home'%}" class="brand-logo">나비방</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-        </ul>
-        </div>
-        <div class="nav-content">
-        <ul class="tabs tabs-transparent">
-            <li class="tab"><a href="{%url 'list'%}">방 보러가기</a></li>
-            <li class="tab"><a class="active" href="{%url 'register'%}">방 등록하기</a></li>
-
-            {% if user.is_authenticated %}
-                <li class="tab"><a href="{% url 'show_profile' %}">회원정보</a></li>
-
-                <li class="tab"><a href="javascript:{document.getElementById('logout').submit()}">로그아웃</a>
-                    <form id="logout" method="POST" action="{% url 'logout' %}">
-                        {% csrf_token %} <input type="hidden">
-                    </form>
-                </li>
-
-            {% else %}
-                <li class="tab"><a href="{%url 'signup'%}">회원가입</a></li>
-                <li class="tab"><a href="{%url 'login'%}">로그인</a></li>
-            {% endif %}
-
-
-             <li class="tab"><a href="http://www.fgruber.ch/" target="_blank"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> User Settings</a></li>
-             <li class="tab"><a href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
-
-
-
-                </ul>
-
-        </div>
-
-
-
-
-
-    </nav>
-
-
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-    </ul>
-
-</body>   -->
-<!-- <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,900" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap" rel="stylesheet">
-  Compiled and minified JavaScript
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
-    <style>
-        .bg{
-            background-color: rgb(250, 224, 212);
-            font-family: 'Noto Serif KR', serif;
-        }
-        .list{
-          font-size: 1.2rem;
-        }
-
-
-
-    </style>
-</head> -->
 <body>
-<!--<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #004059;">
-    <a class="navbar-brand" href="{% url 'home' %}" style="color:white">나비방</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" href="{%url 'list'%}" style="color:white">방 보러가기</a>
-        <a class="nav-item nav-link" href="{%url 'register'%}" style="color:white">방 등록하기</a>
-        {% if user.is_authenticated %}
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" style="color:white" id="navbarDropdown" role="button" data-toggle="dropdown"
-                 aria-haspopup="true" aria-expanded="false">환영합니다. {{ user.username }} 님!</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" style="color:rgb(26, 21, 21)" href="javascript:{document.getElementById('logout').submit()}">로그아웃</a>
-            <form id="logout" method="POST" action="{% url 'logout' %}">
-                 {% csrf_token %} <input type="hidden" />
-            </form>
-            </div>
-        </li>
-        {% else %}
-        <a class="nav-item nav-link" style="color:white" href="{% url 'signup' %}">회원가입</a>
-        <a class="nav-item nav-link" style="color:white" href="{% url 'login' %}">로그인</a>
-        {% endif %}
-
-
-
-       </div>
-    </div>
-
-</nav>-->
 
 <nav class="nav-extended">
         <div class="nav-wrapper">
@@ -136,23 +26,13 @@
             <li><a href="{% url 'login' %}" class="list">로그인</li>
             {% endif %}
           </ul>
-          <ul class="side-nav" id="mobile-demo">
 
-
-            <li><a href="sass.html">로그인</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">JavaScript</a></li>
-          </ul>
         </div>
         <div class="nav-content">
           <ul class="tabs tabs-transparent">
             <li ><a href="{% url 'list' %}" class = "list" target="_self">방 보러가기</a></li>
             <li><a href="{% url 'register' %}" class = "list" target="_self">방 등록하기</a></li>
-<<<<<<< HEAD
             <li ><a href="{% url 'show_profile' %}" class = "list" target="_self">마이 페이지</a></li>
-=======
-            <li ><a href="{% url 'show_profile'%}" class = "list" target="_self">마이 페이지</a></li>
->>>>>>> 9eb09ddf7755fdd5583b8e0b4348c3911cb72e8f
           </ul>
         </div>
       </nav>

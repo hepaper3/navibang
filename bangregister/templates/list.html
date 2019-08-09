@@ -1,5 +1,5 @@
-{% extends 'base.html' %} 
-{% block content %} 
+{% extends 'base.html' %}
+{% block content %}
 
 <h1>list.html</h1>
 <a href = "{%url 'register'%}">새 글 쓰기</a>
@@ -10,15 +10,15 @@
             <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
             <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
             <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <meta charset="utf-8"> 
-	<meta name="viewport" content="width=device-width, initial-scale=1">	
-	<meta name="author" content="sumit kumar"> 
-	<title>blog</title> 
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="sumit kumar">
+	<title>blog</title>
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 	<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
 	<link href="css/style.css" rel="stylesheet" type="text/css">
 	<script src="https://use.fontawesome.com/07b0ce5d10.js"></script>
-        
+
     <style>
 
 .list{
@@ -45,8 +45,8 @@
     text-decoration: none;
     transition: 0.5s;
 }
-.content-footer span a:hover{     
-    color:#F39C12;   
+.content-footer span a:hover{
+    color:#F39C12;
 }
 aside{
     margin-top: 30px;
@@ -75,10 +75,10 @@ aside .content-footer>img {
 }
 
 @media (max-width:768px){
-    .user-ditels {   
-    right: 5px;   
+    .user-ditels {
+    right: 5px;
 }
-    
+
 }
 .user-small-img{cursor: pointer;}
 
@@ -96,7 +96,7 @@ aside .content-footer>img {
     padding-right: 28px;
     text-align: right;
 }
-.user-full-ditels p{    
+.user-full-ditels p{
     color: #fff;
     display: block;
     margin: 0px;
@@ -128,7 +128,7 @@ aside .content-footer>img {
     font-size: 14pt;
     border-bottom: 2px solid #e5ebef;
     margin-bottom: 15px;
-    padding-bottom: 10px;    
+    padding-bottom: 10px;
     margin-top: 0px;
 }
 
@@ -159,7 +159,7 @@ aside .content-footer>img {
     </head>
 
 <body>
-   
+
     <section id="blog-section" >
      <div class="container">
        <div class="row">
@@ -179,24 +179,23 @@ aside .content-footer>img {
              </aside>
             </div>
            </div>
-          </div>                
+          </div>
              </div>
            </div>
-         </div>
-     
+
     </section>
-    
+
 	 <script src="js/jquery-3.1.1.js"></script>
 	 <script src="js/bootstrap.js"></script>
 	 <script>
          $(document).ready(function(){
-         $('[data-toggle="tooltip"]').tooltip(); 
+         $('[data-toggle="tooltip"]').tooltip();
          });
-         
-         
-        
-      
-         
+
+
+
+
+
 var acc = document.getElementsByClassName("accordion");
 var i;
 
@@ -208,7 +207,7 @@ for (i = 0; i < acc.length; i++) {
       panel.style.maxHeight = null;
     } else {
       panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
+    }
   }
 }
 </script>
