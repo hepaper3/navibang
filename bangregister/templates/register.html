@@ -3,7 +3,7 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 {%extends 'base.html'%}
-{% block content %} 
+{% block content %}
 <div class="container">
         <h4 class="well">Register Form</h4>
        <div class="col-lg-12 well">
@@ -12,7 +12,7 @@
 <form method='POST' enctype="multipart/form-data">
     {% csrf_token %}
     <table>
-        {{form.as_table}}
+        {{form.as_p}}
     </table>
     <br>
     <input type="submit" class="btn btn-lg btn-danger" value="등록">

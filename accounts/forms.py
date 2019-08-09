@@ -11,7 +11,7 @@ class UserForm(forms.ModelForm):
             'first_name' : forms.TextInput(
                 attrs={
                     'class' : 'form-control',
-                    'placeholder' : '이름' 
+                    'placeholder' : '이름'
                 }
             ),
 
@@ -28,14 +28,14 @@ class UserForm(forms.ModelForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        
+
         fields = ('age', 'birth_date', 'gender', 'self_introduce', 'profile_img')
-        
+
         GENDER_CHOICES=(
             ('female', '여자'),
             ('male', '남자')
         )
-        
+
         widgets = {
             'age' : forms.NumberInput(
                 attrs = {
@@ -50,7 +50,7 @@ class ProfileForm(forms.ModelForm):
                 }
             ),
 
-            'gender' : forms.RadioSelect(
+            'gender' : forms.Select(
                 attrs = {
                     'class' : 'form-control',
                     'choices' : 'GENDER_CHOCIES',
@@ -67,4 +67,3 @@ class ProfileForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(ProfileForm, self).__init__(*args, **kwargs)
         self.fields['profile_img'].required = False
-        

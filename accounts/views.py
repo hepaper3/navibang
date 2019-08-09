@@ -18,6 +18,9 @@ def show_profile(request) :
 def signup_complete(request) :
     return render(request, 'signup_complete.html')
 
+def profile_info(request) :
+    return render(request, 'profile_info.html')
+
 @login_required
 @transaction.atomic
 def update_profile(request):
