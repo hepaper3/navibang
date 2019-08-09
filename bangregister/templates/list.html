@@ -216,6 +216,8 @@ for (i = 0; i < acc.length; i++) {
 {%for roompost in roomposts.all%}
     <h1>{{roompost.intro}}</h1>
     <p>{{roompost.pub_date}}</p>
+    <img src="{{roompost.main_img.url}}"alt="대표사진">
+    <br>
     <a href="{% url 'show' roompost.id %}">...more</a>
 {%endfor%}
 {% endblock %}

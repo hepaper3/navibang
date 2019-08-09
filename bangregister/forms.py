@@ -4,7 +4,7 @@ from .models import Room
 class RoomForm(forms.ModelForm):
     class Meta:
         model = Room
-        fields = ('intro','pub_date','confirmation','rent_term','start_date','end_date','price','floor','room_type','area','host_stuff','parking','pet','elevator','option','detail','main_img','other_img','room_img')
+        fields = ('intro','pub_date','confirmation','rent_term','start_date','end_date','price','floor','room_type','area','host_stuff','parking','pet','elevator','option','detail','main_img','other_img','room_img', 'address1', 'address2', 'address3', 'address4')
 
         def __init__(self, *args, **kwargs):
           super(RoomForm, self).__init__(*args, **kwargs)
@@ -92,6 +92,36 @@ class RoomForm(forms.ModelForm):
                         'rows': '5',
                       }
             ),
+                'address1':forms.TextInput(
+                attrs={
+                    'type':'text' ,
+                    'id' :'sample3_postcode' ,
+                    'placeholder' : '우편번호',
+                    }
+            ),
+
+            'address2':forms.TextInput(
+                attrs={
+                    'type':'text' ,
+                    'id' :'sample3_address' ,
+                    'placeholder' : '주소',
+                }
+        ),
+            'address3':forms.TextInput(
+                attrs={
+                    'type':'text' ,
+                    'id' :'sample3_detailAddress' ,
+                    'placeholder' : '상세주소',
+                }
+        ),
+
+            'address4':forms.TextInput(
+                attrs={
+                    'type':'text' ,
+                    'id' :'sample3_extraAddress' ,
+                    'placeholder' : '참고항목',
+                }
+        ),
         }
 
         labels = {
@@ -114,4 +144,8 @@ class RoomForm(forms.ModelForm):
                     'main_img': '대표 사진',
                     'other_img': '화장실, 주방 사진',
                     'room_img': '방별 사진',
+                    'address1' : '우편번호',
+                    'address2' : '주소',
+                    'address3' : '상세주소',
+                    'address4' : '참고항목',
                  }
