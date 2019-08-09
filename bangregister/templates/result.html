@@ -1,0 +1,32 @@
+<form action="{% url 'result' %}" method="get">
+    글제목으로 검색하기 <input type="search" name="query">
+    <input type="submit" value="search">
+</form>
+
+{% for result in result.all %}
+
+
+<section id="blog-section" >
+ <div class="container">
+   <div class="row">
+     <div class="col-lg-8">
+       <div class="row">
+          <div class="col-lg-6 col-md-6">
+         <aside>
+            <img src="{{ roompost.main_img.url }}" class="img-responsive">
+            <div class="content-title">
+    <div class="text-center">
+    <h3>{{result.intro}}</h3>
+    </div>
+    </div>
+    <div class="content-footer">
+    <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
+    <a href=""></a><span style="font-size: 16px;color: #fff;">more</span>
+         </aside>
+        </div>
+       </div>
+      </div>
+         </div>
+       </div>
+{% endfor %}
+</section>

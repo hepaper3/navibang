@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 
-{% block content %} 
+{% block content %}
 {% load staticfiles %}
 
 <head>
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> 
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
@@ -49,8 +49,8 @@ h3{
     background:#ee6e73;
 }
 
-.box-part:hover .fa , 
-.box-part:hover .title , 
+.box-part:hover .fa ,
+.box-part:hover .title ,
 .box-part:hover .text ,
 .box-part:hover a{
     color:#FFF;
@@ -119,7 +119,7 @@ h3{
   .card{
     margin: 20px;
   }
-} 
+}
 
     </style>
 </head>
@@ -133,73 +133,47 @@ h3{
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
-                           
+
                                 <div class="box-part text-center" >
                                         <!--<img src="{% static 'binoculars' %}">-->
-                                        
-                                    
+
+
                                     <div class="title">
                                         <h3><b>임대</b></h3>
                                     </div>
-                                    
+
                                     <div class="text">
                                         <span>몇 달 비는 내 집 너무 아까울 때</span>
                                     </div>
-                                    
+
                                     <a href="{% url 'register' %}">등록하러 가기</a>
-                                    
+
                                  </div>
-                            </div>	 
-                            
+                            </div>
+
                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                           
+
                                 <div class="box-part text-center">
-                                    
-                                    
-                                
+
+
+
                                     <div class="title">
                                         <h3><b>임차</b></h3>
                                     </div>
-                                    
+
                                     <div class="text">
                                         <span>몇 달 잠깐 살 집 구하고 싶을 때</span>
                                     </div>
-                                    
+
                                     <a href="{% url 'list' %}">빌리러 가기</a>
-                                    
+
                                  </div>
-                            </div>	 
-                            
-                             <!--<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                           
-                                <div class="box-part text-center">
-                                    
-                                    <i class="fa fa-facebook fa-3x" aria-hidden="true"></i>
-                                    
-                                    <div class="title">
-                                        <h3>Facebook</h3>
-                                    </div>
-                                    
-                                    <div class="text">
-                                        <span>Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui ad.</span>
-                                    </div>
-                                    
-                                    <a href="#">Learn More</a>
-                                    
-                                 </div>
-                            </div>	--> 
-                            
-                           	 
-                            
-                            	 
-                            
-                             
-                    
-                    </div>		
+                            </div>	                     
+                    </div>
                 </div>
             </div>
 
-            
+
             <div class="container">
                     <div class="row">
                       <div class="col-md-4">
@@ -224,11 +198,8 @@ h3{
                     </div>
                   </div>
 
-            
+
 </body>
 
 
 {% endblock %}
-
-
-
