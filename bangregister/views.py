@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
 from .models import Room, Scrap, Like
-from .forms import RoomForm
+from .forms import RoomForm, CommentForm 
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
@@ -111,3 +111,20 @@ def like(request, roompost_id) :
         liked.delete()
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+def commentcreate(request, roompost_id): 
+    roompost = get_object_or_404(Room, pk=roompost_id) 
+    if request.method=='POST': 
+        form = CommentForm(request.POST) 
+        if form.is_valid(): 
+            comment = form.save(commit=False)
+            comment.room = roompost 
+            comment.save() 
+            return redirect('show', roompost_id=roompost.pk) 
+        else: 
+            redirect('list') 
+    else: 
+        form = CommentForm() 
+        return render(request, 'show.html', {'form': form, 'roompost': roompost})
+
+

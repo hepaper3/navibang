@@ -90,4 +90,16 @@
     <br><br>
 </div>
     <br><br>
+    <a href="{% url 'commentcreate' roompost.id %}">댓글 작성하기</a> 
+    <form method='POST'> 
+        {% csrf_token %} 
+        {{form}} 
+        <button type='submit'>댓글 등록</button> 
+    </form>
+    <h4>댓글 목록</h4> 
+    {% for comment in roompost.comment_set.all %} 
+        {{ comment.content }}<br/> 
+    {% endfor %}
+
+    <br><br>
 {% endblock %}
