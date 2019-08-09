@@ -3,6 +3,8 @@ from django.http import HttpResponseRedirect
 from .models import Room, Scrap, Like
 from .forms import RoomForm
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+
 
 
 
@@ -26,8 +28,13 @@ def result(request):
 def show(request, roompost_id):
     #방 세부 페이지
     roompost = get_object_or_404(Room, pk=roompost_id)
-    scrap = Scrap.objects.filter(user=request.user, room_id=roompost)
-    like = Like.objects.filter(user=request.user, room_id=roompost)
+
+    if User.is_anonymous:
+        scrap=None
+        like=None
+    else:
+        scrap = Scrap.objects.filter(user=request.user, room_id=roompost)
+        like = Like.objects.filter(user=request.user, room_id=roompost)
 
     if roompost.creator == request.user :
         user_authority = True
@@ -36,7 +43,7 @@ def show(request, roompost_id):
 
     return render(request, 'show.html', {'roompost' : roompost, 'scrap' : scrap, 'like' : like, 'user_authority' : user_authority })
 
-    
+@login_required
 def roomupdate(request, roompost_id):
     roompost = get_object_or_404(Room, pk = roompost_id) 
     if request.method == 'POST':
@@ -53,6 +60,7 @@ def roomupdate(request, roompost_id):
         else :
             return render(request, 'home.html')
 
+@login_required
 def register(request):
     #방 등록 페이지 
     if request.method == 'POST':
@@ -66,10 +74,12 @@ def register(request):
         form = RoomForm() 
     return render(request, 'register.html', {'form':form})
 
+@login_required
 def edit(request):
     # 수정 페이지
     return render(request, 'edit.html')
 
+@login_required
 def delete(request, roompost_id):
     #삭제기능
     roompost = get_object_or_404(Room, pk=roompost_id)
@@ -80,7 +90,7 @@ def delete(request, roompost_id):
     else :
         return render(request, 'home.html')
 
-
+@login_required
 def scrap(request, roompost_id) :
     roompost = get_object_or_404(Room, pk=roompost_id)
     scrapped = Scrap.objects.filter(user=request.user, room=roompost)
@@ -91,7 +101,7 @@ def scrap(request, roompost_id) :
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
-
+@login_required
 def like(request, roompost_id) :
     roompost = get_object_or_404(Room, pk=roompost_id)
     liked = Like.objects.filter(user=request.user, room=roompost)
