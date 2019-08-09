@@ -125,8 +125,11 @@
 
     <div class="col-sm-5 col-xs-6 tital " >Self introduce :</div><div class="col-sm-7">{{ user.profile.self_introduce }}</div>
 
-
-
+    <br><br>
+    <div class="col-sm-5 col-xs-6 tital " ><a href="{% url 'my_post' %}">내가 쓴 글</a></div>
+    <br><br>
+    <div class="col-sm-5 col-xs-6 tital " ><a href="{% url 'my_scrap' %}">내가 스크랩한 글</a> </div>
+    <br><br>
 
 
 
@@ -140,11 +143,11 @@
         </div>
     </div>
         <script>
-                  $(function() {
-        $('#profile-image1').on('click', function() {
-            $('#profile-image-upload').click();
-        });
-    });
+                $(function() {
+                    $('#profile-image1').on('click', function() {
+                        $('#profile-image-upload').click();
+                    });
+                });
                   </script>
 
 
