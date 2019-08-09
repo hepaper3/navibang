@@ -3,6 +3,215 @@
 
 <h1>list.html</h1>
 <a href = "{%url 'register'%}">새 글 쓰기</a>
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+            <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<meta name="author" content="sumit kumar"> 
+	<title>blog</title> 
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<script src="https://use.fontawesome.com/07b0ce5d10.js"></script>
+        
+    <style>
+
+.list{
+    font-size: 2rem;
+}
+
+.btn-default {
+    color: #333;
+    background-color: #009688;
+    border-color: #009688;
+    border-radius:0px;
+    color:#fff;
+}
+
+#blog-section{margin-top:40px;margin-bottom:80px;}
+.content-title{padding:5px;background-color:#fff;}
+.content-title h3 a{color:#34495E;text-decoration:none; transition: 0.5s;}
+.content-title h3 a:hover{color:#F39C12; }
+.content-footer{background-color:#16A085;padding:10px;position: relative;}
+.content-footer span a {
+    color: #fff;
+    display: inline-block;
+    padding: 6px 5px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.content-footer span a:hover{     
+    color:#F39C12;   
+}
+aside{
+    margin-top: 30px;
+    -webkit-box-shadow: 1px 4px 16px 3px rgba(199,197,199,1);
+-moz-box-shadow: 1px 4px 16px 3px rgba(199,197,199,1);
+box-shadow: 1px 4px 16px 3px rgba(199,197,199,1);}
+aside .content-footer>img {
+    width: 33px;
+    height: 33px;
+    border-radius: 100%;
+    margin-right: 10px;
+    border: 2px solid #fff;
+}
+
+.user-ditels {
+    width: 300px;
+    top: -100px;
+    height: 100px;
+    padding-bottom: 99px;
+    position: absolute;
+    border: solid 2px #fff;
+    background-color: #34495E;
+    right: 25px;
+    display: none;
+    z-index: 1;
+}
+
+@media (max-width:768px){
+    .user-ditels {   
+    right: 5px;   
+}
+    
+}
+.user-small-img{cursor: pointer;}
+
+.content-footer:hover .user-ditels  {
+    display: block;
+}
+
+
+.content-footer .user-ditels .user-img{width: 100px;height:100px;float: left;}
+.user-full-ditels h3 {
+    color: #fff;
+    display: block;
+    margin: 0px;
+    padding-top: 10px;
+    padding-right: 28px;
+    text-align: right;
+}
+.user-full-ditels p{    
+    color: #fff;
+    display: block;
+    margin: 0px;
+     padding-right: 20px;
+    padding-top: 5px;
+   text-align: right;}
+.social-icon {
+    background-color: #fff;
+    margin-top: 10px;
+    padding-right: 20px;
+    text-align: right;
+}
+.social-icon>a{font-size:20px;text-decoration:none;padding: 5px;}
+.social-icon a:nth-of-type(1){color:#4E71A8;}
+.social-icon a:nth-of-type(2){color:#3FA1DA;}
+.social-icon a:nth-of-type(3){color:#E3411F;}
+.social-icon a:nth-of-type(4){color:#CA3737;}
+.social-icon a:nth-of-type(5){color:#3A3A3A;}
+
+
+/*recent-post-col////////////////////*/
+.widget-sidebar {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.title-widget-sidebar {
+    font-size: 14pt;
+    border-bottom: 2px solid #e5ebef;
+    margin-bottom: 15px;
+    padding-bottom: 10px;    
+    margin-top: 0px;
+}
+
+.title-widget-sidebar:after {
+    border-bottom: 2px solid #f1c40f;
+    width: 150px;
+    display: block;
+    position: absolute;
+    content: '';
+    padding-bottom: 10px;
+}
+
+.recent-post{width: 100%;height: 80px;list-style-type: none;}
+.post-img img {
+    width: 100px;
+    height: 70px;
+    float: left;
+    margin-right: 15px;
+    border: 5px solid #16A085;
+    transition: 0.5s;
+}
+
+.recent-post a {text-decoration: none;color:#34495E;transition: 0.5s;}
+.post-img, .recent-post a:hover{color:#F39C12;}
+.post-img img:hover{border: 5px solid #F39C12;}
+
+    </style>
+    </head>
+
+<body>
+   
+    <section id="blog-section" >
+     <div class="container">
+       <div class="row">
+         <div class="col-lg-8">
+           <div class="row">
+              <div class="col-lg-6 col-md-6">
+             <aside>
+                <img src="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg" class="img-responsive">
+                <div class="content-title">
+				<div class="text-center">
+				<h3><a href="#">Niki Postingan Sing Kepisan Njeh, Perdana Ngoten</a></h3>
+				</div>
+				</div>
+				<div class="content-footer">
+				<img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
+				<span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
+             </aside>
+            </div>
+           </div>
+          </div>                
+             </div>
+           </div>
+         </div>
+     
+    </section>
+    
+	 <script src="js/jquery-3.1.1.js"></script>
+	 <script src="js/bootstrap.js"></script>
+	 <script>
+         $(document).ready(function(){
+         $('[data-toggle="tooltip"]').tooltip(); 
+         });
+         
+         
+        
+      
+         
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  }
+}
+</script>
 
 {%for roompost in roomposts.all%}
     <h1>{{roompost.intro}}</h1>
@@ -12,3 +221,5 @@
     <a href="{% url 'show' roompost.id %}">...more</a>
 {%endfor%}
 {% endblock %}
+</body>
+</html>

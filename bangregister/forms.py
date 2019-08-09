@@ -2,8 +2,12 @@ from django import forms
 from .models import Room
 
 class RoomForm(forms.ModelForm):
+<<<<<<< HEAD
     option = forms.CharField(widget=forms.RadioSelect(choices=((0,'냉장고'),(1,'선풍기'),(2,'에어컨'))))
     class Meta: 
+=======
+    class Meta:
+>>>>>>> dad7b5b0af0c3e5a0c250b0bc0a694fab545bee2
         model = Room
         fields = ('intro','pub_date','confirmation','rent_term','start_date','end_date','price','floor','room_type','area','host_stuff','parking','pet','elevator','option','detail','main_img','other_img','room_img')
 
@@ -11,4 +15,112 @@ class RoomForm(forms.ModelForm):
           super(RoomForm, self).__init__(*args, **kwargs)
           self.fields['file'].required = False
 
+<<<<<<< HEAD
         
+=======
+        widgets = {
+            'intro': forms.TextInput(
+                attrs={
+                        'class': 'form-control',
+                        'placeholder': '방 소개글을 작성해 주세요.',
+                      }
+            ),
+            'pub_date': forms.DateInput(
+                attrs={
+                        'class': 'form-control',
+                        'type':  'date',
+                      }
+            ),
+             'rent_term': forms.Select(
+                attrs={
+                        'class': 'form-control',
+                      }
+            ),
+             'start_date': forms.DateInput(
+                attrs={
+                        'class': 'form-control',
+                        'type':  'date',
+                      }
+            ),
+             'end_date': forms.DateInput(
+                attrs={
+                        'class': 'form-control',
+                        'type':  'date',
+                      }
+            ),
+             'price': forms.TextInput(
+                attrs={
+                        'class': 'form-control',
+                      }
+            ),
+             'floor': forms.TextInput(
+                attrs={
+                        'class': 'form-control',
+                      }
+            ),
+             'room_type': forms.Select(
+                attrs={
+                        'class': 'form-control',
+                      }
+            ),
+             'area': forms.TextInput(
+                attrs={
+                        'class': 'form-control',
+                      }
+            ),
+             'host_stuff': forms.Select(
+                attrs={
+                        'class': 'form-control',
+                      }
+            ),
+             'parking': forms.Select(
+                attrs={
+                        'class': 'form-control',
+                      }
+            ),
+              'pet': forms.Select(
+                attrs={
+                        'class': 'form-control',
+                      }
+            ),
+              'elevator': forms.Select(
+                attrs={
+                        'class': 'form-control',
+                      }
+            ),
+              'option': forms.SelectMultiple(
+                attrs={
+                        'class': 'form-control',
+
+                      }
+            ),
+               'detail': forms.Textarea(
+                attrs={
+                        'class': 'form-control',
+                        'rows': '5',
+                      }
+            ),
+        }
+
+        labels = {
+                    'intro': '소개글',
+                    'pub_date': '등록일',
+                    'confirmation': '확인서',
+                    'rent_term': '임대유형',
+                    'start_date': '임대 시작 날짜',
+                    'end_date': '임대 종료 날짜',
+                    'price': '가격',
+                    'floor': '층',
+                    'room_type': '방 유형',
+                    'area': '면적(평)',
+                    'host_stuff': '집주인 짐',
+                    'parking': '주차장',
+                    'pet': '애완동물 동반',
+                    'elevator': '엘리베이터',
+                    'option': '옵션',
+                    'detail': '상세소개',
+                    'main_img': '대표 사진',
+                    'other_img': '화장실, 주방 사진',
+                    'room_img': '방별 사진',
+                 }
+>>>>>>> dad7b5b0af0c3e5a0c250b0bc0a694fab545bee2

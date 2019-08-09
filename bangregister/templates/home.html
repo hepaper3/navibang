@@ -1,5 +1,234 @@
 {% extends 'base.html' %}
+
+
 {% block content %} 
-<h1>Main page</h1>
+{% load staticfiles %}
+
+<head>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> 
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700');
+        .list{
+    font-size: 2rem;
+}
+
+body{
+    background: #f2f2f2;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.5rem;
+    background-image:url('https://irp-cdn.multiscreensite.com/1572ec40/dms3rep/multi/tablet/interior-2596976_1280.jpg');
+}
+
+h3{
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+.box{
+    padding:60px 0px;
+}
+
+.box-part{
+    background:#FFF;
+    border-radius:10px;
+    padding:60px 10px;
+    margin:30px 0px;
+}
+
+.box-part:hover{
+    background:#ee6e73;
+}
+
+.box-part:hover .fa , 
+.box-part:hover .title , 
+.box-part:hover .text ,
+.box-part:hover a{
+    color:#FFF;
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+}
+
+.text{
+    margin:20px 0px;
+}
+
+.fa{
+     color:#4183D7;
+}
+
+
+.card{
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  padding: 14px 80px 18px 36px;
+  cursor: pointer;
+}
+
+.card:hover{
+     transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.card h3{
+  font-weight: 600;
+}
+
+.card img{
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  max-height: 120px;
+}
+
+.card-1{
+  background-image: url(https://ionicframework.com/img/getting-started/ionic-native-card.png);
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+.card-2{
+   background-image: url(https://ionicframework.com/img/getting-started/components-card.png);
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+.card-3{
+   background-image: url(https://ionicframework.com/img/getting-started/theming-card.png);
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+@media(max-width: 990px){
+  .card{
+    margin: 20px;
+  }
+} 
+
+    </style>
+</head>
+<body>
+
+        <div class="box">
+                <div class="container">
+                     <div class="row">
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                         &nbsp;&nbsp;&nbsp;
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
+                           
+                                <div class="box-part text-center" >
+                                        <!--<img src="{% static 'binoculars' %}">-->
+                                        
+                                    
+                                    <div class="title">
+                                        <h3><b>임대</b></h3>
+                                    </div>
+                                    
+                                    <div class="text">
+                                        <span>몇 달 비는 내 집 너무 아까울 때</span>
+                                    </div>
+                                    
+                                    <a href="{% url 'register' %}">등록하러 가기</a>
+                                    
+                                 </div>
+                            </div>	 
+                            
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                           
+                                <div class="box-part text-center">
+                                    
+                                    
+                                
+                                    <div class="title">
+                                        <h3><b>임차</b></h3>
+                                    </div>
+                                    
+                                    <div class="text">
+                                        <span>몇 달 잠깐 살 집 구하고 싶을 때</span>
+                                    </div>
+                                    
+                                    <a href="{% url 'list' %}">빌리러 가기</a>
+                                    
+                                 </div>
+                            </div>	 
+                            
+                             <!--<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                           
+                                <div class="box-part text-center">
+                                    
+                                    <i class="fa fa-facebook fa-3x" aria-hidden="true"></i>
+                                    
+                                    <div class="title">
+                                        <h3>Facebook</h3>
+                                    </div>
+                                    
+                                    <div class="text">
+                                        <span>Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui ad.</span>
+                                    </div>
+                                    
+                                    <a href="#">Learn More</a>
+                                    
+                                 </div>
+                            </div>	--> 
+                            
+                           	 
+                            
+                            	 
+                            
+                             
+                    
+                    </div>		
+                </div>
+            </div>
+
+            
+            <div class="container">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="card card-1">
+                          <h3>효율</h3>
+                          <p>기존 임대인은 놀고 있는 방을 활용하여 수익을 얻고, 단기 임차인은 출장, 계절학기 때의 임시거처를 마련할 수 있습니다.</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card card-2">
+                          <h3>신뢰</h3>
+                          <p>집주인과 기존 임대인 간 서면 계약 확인서를 업로드하고, 임대 관련 3자간의 동의 여부를 공식화합니다.</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card card-3">
+                          <h3>다양성</h3>
+                          <p>임대인, 임차인을 위한 다양한 검색필터를 제공합니다.<br>
+                            옵션, 반려동물 유무 등 임차인과 임대인 모두에게 필요한 검색필터를 제공합니다.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+            
+</body>
+
+
 {% endblock %}
+
+
 

@@ -8,9 +8,9 @@
 {% endif %}
 
 
-<h1>Sign up</h1>
 
-<form method="POST" action="{% url 'signup' %}">
+
+<!--<form method="POST" action="{% url 'signup' %}">
     {% csrf_token %}
     
     Username : 
@@ -29,6 +29,51 @@
     <br>
 
     <input type="submit" value="Sign Up!">
-</form>
+</form>-->
 
+
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Log in</title>
+
+  </head>
+
+  <body cellpadding="0" cellspacing="0" marginleft="0" margintop="0" width="100%" height="100%" text-align="center">
+    <br/>
+	<div class="card align-middle" style="width:30rem; border-radius:20px; margin-left: auto; margin-right: auto;margin-bottom: auto;">
+		<div class="card-title" style="margin-top:30px;">
+			<h2 class="card-title text-center" style="color:#113366;">Sign up</h2>
+		</div>
+		<div class="card-body">
+      <form class="form-signin" method="POST" onSubmit="logincall();return false" action="{% url 'signup' %}">
+            {% csrf_token %}
+        <h5 class="form-signin-heading">회원가입 정보를 입력하세요</h5>
+        <label for="inputEmail" class="sr-only">Your Username</label>
+        <input type="text" name="username" id="uname" class="form-control" placeholder="Your Username" required autofocus><BR>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="password1" id="upw" class="form-control" placeholder="Password" required><br>
+        <label for="confirmPassword" class="sr-only">Confirm Password</label>
+        <input type="password" name="password2" id="ucpw" class="form-control" placeholder="Confrim Password" required><br>
+        
+        <button id="btn-Yes" class="btn btn-danger btn-block" type="submit">Register</button>
+      </form>
+      
+		</div>
+	</div>
+
+	<div class="modal">
+	</div>
+  </body>
+</html>
 {% endblock %}
