@@ -1,8 +1,8 @@
 {% extends 'base.html' %} 
 {% block content %} 
+<br><br>
+<p class="register"><a class="btn btn-danger" href="{%url 'register'%}" role="button">방 등록하기</a></p>
 
-<h1>list.html</h1>
-<a href = "{%url 'register'%}">새 글 쓰기</a>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -27,8 +27,8 @@
 
 .btn-default {
     color: #333;
-    background-color: #009688;
-    border-color: #009688;
+    background-color: #ff927e;
+    border-color: #ff927e;
     border-radius:0px;
     color:#fff;
 }
@@ -37,7 +37,7 @@
 .content-title{padding:5px;background-color:#fff;}
 .content-title h3 a{color:#34495E;text-decoration:none; transition: 0.5s;}
 .content-title h3 a:hover{color:#F39C12; }
-.content-footer{background-color:#16A085;padding:10px;position: relative;}
+.content-footer{background-color:#ff927e;padding:10px;position: relative;}
 .content-footer span a {
     color: #fff;
     display: inline-block;
@@ -155,27 +155,34 @@ aside .content-footer>img {
 .post-img, .recent-post a:hover{color:#F39C12;}
 .post-img img:hover{border: 5px solid #F39C12;}
 
+.register{
+    text-align: center;
+}
+
+
+
     </style>
     </head>
 
 <body>
-   
+        {%for roompost in roomposts.all%}
     <section id="blog-section" >
-     <div class="container">
+    <div class="container" >
+            
        <div class="row">
          <div class="col-lg-8">
+                
            <div class="row">
               <div class="col-lg-6 col-md-6">
              <aside>
                 <img src="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg" class="img-responsive">
                 <div class="content-title">
 				<div class="text-center">
-				<h3><a href="#">Niki Postingan Sing Kepisan Njeh, Perdana Ngoten</a></h3>
+				<h3><a href="{% url 'show' roompost.id %}">{{roompost.intro}}</a></h3>
 				</div>
 				</div>
 				<div class="content-footer">
-				<img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-				<span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
+				<span style="font-size: 16px;color: #fff;">{{roompost.start_date}} ~ {{roompost.end_date}}</span>
              </aside>
             </div>
            </div>
@@ -213,10 +220,7 @@ for (i = 0; i < acc.length; i++) {
 }
 </script>
 
-{%for roompost in roomposts.all%}
-    <h1>{{roompost.intro}}</h1>
-    <p>{{roompost.pub_date}}</p>
-    <a href="{% url 'show' roompost.id %}">...more</a>
+
 {%endfor%}
 {% endblock %}
 </body>
