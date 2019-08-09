@@ -81,7 +81,31 @@
 
     </style>
 </head> -->
-<body>
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+  <style>
+    .bg{
+        background-color: rgb(250, 224, 212);
+        font-family: 'Noto Serif KR', serif;
+    }
+    .list{
+      font-size: 1.2rem;
+    }
+
+
+
+</style>
+</head>
+<body class="bg">
 <!--<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #004059;">
     <a class="navbar-brand" href="{% url 'home' %}" style="color:white">나비방</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -118,7 +142,7 @@
         <div class="nav-wrapper">
             &nbsp;&nbsp;&nbsp;&nbsp;
             <a class="navbar-brand" href="{% url 'home' %}" style="color:white">나비방</a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          
           <ul id="nav-mobile" class="right hide-on-med-and-down">
                 {% if user.is_authenticated %}
                 <li class="nav-item dropdown">
@@ -147,12 +171,10 @@
         <div class="nav-content">
           <ul class="tabs tabs-transparent">
             <li ><a href="{% url 'list' %}" class = "list" target="_self">방 보러가기</a></li>
-            <li><a href="{% url 'register' %}" class = "list" target="_self">방 등록하기</a></li>
-<<<<<<< HEAD
-            <li ><a href="{% url 'show_profile' %}" class = "list" target="_self">마이 페이지</a></li>
-=======
+
+            <li ><a href="{% url 'register' %}" class = "list" target="_self">방 등록하기</a></li>
             <li ><a href="{% url 'show_profile'%}" class = "list" target="_self">마이 페이지</a></li>
->>>>>>> 9eb09ddf7755fdd5583b8e0b4348c3911cb72e8f
+
           </ul>
         </div>
       </nav>

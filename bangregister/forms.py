@@ -2,6 +2,15 @@ from django import forms
 from .models import Room
 
 class RoomForm(forms.ModelForm):
+    
+    rent_term = forms.CharField(widget=forms.RadioSelect(choices=(('장기(2주이상)','장기(2주이상)'),('단기(2주미만)','단기(2주미만)'))))
+    room_type = forms.CharField(widget=forms.RadioSelect(choices=(('원룸','원룸'),('투룸','투룸'),('복층형 원룸','복층형 원룸'),('쓰리룸+','쓰리룸+'))))
+    host_stuff = forms.CharField(widget=forms.RadioSelect(choices=(('있음','있음'),('없음','없음'))))
+    parking = forms.CharField(widget=forms.RadioSelect(choices=(('있음','있음'),('없음','없음'))))
+    pet = forms.CharField(widget=forms.RadioSelect(choices=(('가능','가능'),('불가능','불가능'))))
+    elevator = forms.CharField(widget=forms.RadioSelect(choices=(('있음','있음'),('없음','없음'))))
+    option = forms.CharField(widget=forms.RadioSelect(choices=(('에어컨','에어컨'),('냉장고','냉장고'),('세탁기','세탁기'),('책상','책상'),('침대','침대'),('침대','싱크대'))))
+
     class Meta:
         model = Room
         fields = ('intro','pub_date','confirmation','rent_term','start_date','end_date','price','floor','room_type','area','host_stuff','parking','pet','elevator','option','detail','main_img','other_img','room_img', 'address1', 'address2', 'address3', 'address4')
